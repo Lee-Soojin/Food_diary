@@ -1,10 +1,11 @@
 import React from "react";
 import Header from "../header/header";
 import styles from "./diary.module.css";
-import CKEditor from "@ckeditor/ckeditor5-react";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-editor-classic/src/classiceditor.js";
 
 import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold.js";
+import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic.js";
 import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials.js";
 import FontColor from "@ckeditor/ckeditor5-font/src/fontcolor.js";
 import FontFamily from "@ckeditor/ckeditor5-font/src/fontfamily.js";
@@ -27,6 +28,7 @@ import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
 const installedPlugins = [
   Alignment,
   Bold,
+  Italic,
   Essentials,
   FontColor,
   FontFamily,
@@ -71,6 +73,7 @@ const Diary = (props) => {
               "specialCharacters",
               "horizontalLine",
               "|",
+              "image",
               "imageUpload",
               "insertTable",
               "|",
