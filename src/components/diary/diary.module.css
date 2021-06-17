@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --button-background-color: #4dba5b;
+}
+
 .Diary {
   display: flex;
   flex-direction: column;
@@ -16,20 +24,47 @@
 
 .greeting {
   display: flex;
+  width: 21.5ch;
+  height: 2rem;
+  margin: 0;
+  margin: 1rem 0;
+  animation: typing 2s steps(13), blink 1s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-size: 1.5rem;
 }
 
 .title {
-  width: 20rem;
+  width: 25rem;
+  margin: 1rem 0;
+  border: 1px solid gray;
+  height: 1.5rem;
 }
 
-/* .textEditor {
-  width: 70%;
-  height: 100%;
-  min-height: 30rem;
-  border-radius: 0;
-  border: 1px solid gray;
-} */
+.BtnUpload {
+  border: none;
+  border-radius: 0.4rem;
+  display: flex;
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: var(--button-background-color);
+  color: white;
+}
 
-.ck.ck-reset.ck-editor.ck-rounded-corners {
-  min-height: 500px;
+.BtnUpload:hover {
+  transform: scale(1.05);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }

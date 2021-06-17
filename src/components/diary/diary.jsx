@@ -24,6 +24,7 @@ import SpecialCharactersEssentials from "@ckeditor/ckeditor5-special-characters/
 import Heading from "@ckeditor/ckeditor5-heading/src/heading.js";
 import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline.js";
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
+import CKFinder from "@ckeditor/ckeditor5-ckfinder/src/ckfinder";
 
 const installedPlugins = [
   Alignment,
@@ -48,17 +49,17 @@ const installedPlugins = [
   Underline,
 ];
 
-const Diary = (props) => {
+const Diary = ({ FileInput }) => {
   return (
     <div className={styles.Diary}>
       <Header />
       <div className={styles.Editor}>
-        <h2 className={styles.greeting}>Write greeting in here</h2>
+        <h2 className={styles.greeting}>오늘의 하루를 기록하세요</h2>
         <input type="text" placeholder="제목" className={styles.title} />
         <CKEditor
           editor={ClassicEditor}
           config={{
-            plugins: [...installedPlugins],
+            plugins: [...installedPlugins, CKFinder],
             toolbar: [
               "heading",
               "|",
@@ -80,9 +81,13 @@ const Diary = (props) => {
               "undo",
               "redo",
             ],
+            ckfinder: {
+              uploadUrl: "https://api.cloudinary.com/v1_1/soojin/image/upload",
+            },
           }}
-          data="<p>Hello from CKEditor 5!</p>"
+          data="<p>Hello!</p>"
         />
+        <button className={styles.BtnUpload}>글 올리기</button>
       </div>
     </div>
   );

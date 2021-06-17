@@ -3,11 +3,15 @@ import Home from "./components/home/home";
 import Diary from "./components/diary/diary";
 import "./app.css";
 
-function App() {
+function App({ FileInput }) {
   return (
     <BrowserRouter>
       <Route exact path="/" component={Home}></Route>
-      <Route exact path="/diary" component={Diary} />
+      <Route
+        path="/diary"
+        render={() => <Diary FileInput={FileInput} />}
+        exact
+      />
     </BrowserRouter>
   );
 }
