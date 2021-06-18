@@ -1,6 +1,3 @@
-const url = process.env.REACT_APP_CLOUDINARY_API_KEY;
-const name = process.env.REACT_APP_CLOUDINARY_NAME;
-
 class ImageUploader {
   async upload(file) {
     const data = new FormData();

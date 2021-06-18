@@ -17,6 +17,7 @@ import ImageResize from "@ckeditor/ckeditor5-image/src/imageresize.js";
 import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle.js";
 import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar.js";
 import ImageUpload from "@ckeditor/ckeditor5-image/src/imageupload.js";
+import ImageInsert from "@ckeditor/ckeditor5-image/src/imageinsert";
 import Table from "@ckeditor/ckeditor5-table/src/table.js";
 import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar.js";
 import SpecialCharacters from "@ckeditor/ckeditor5-special-characters/src/specialcharacters.js";
@@ -25,6 +26,7 @@ import Heading from "@ckeditor/ckeditor5-heading/src/heading.js";
 import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline.js";
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
 import CKFinder from "@ckeditor/ckeditor5-ckfinder/src/ckfinder";
+import MyCustomUploadAdapterPlugin from "../custom_img_upload/custom_img_upload";
 
 const installedPlugins = [
   Alignment,
@@ -42,6 +44,7 @@ const installedPlugins = [
   ImageStyle,
   ImageToolbar,
   ImageUpload,
+  ImageInsert,
   SpecialCharacters,
   SpecialCharactersEssentials,
   Table,
@@ -59,7 +62,7 @@ const Diary = ({ FileInput }) => {
         <CKEditor
           editor={ClassicEditor}
           config={{
-            plugins: [...installedPlugins, CKFinder],
+            plugins: [...installedPlugins, MyCustomUploadAdapterPlugin],
             toolbar: [
               "heading",
               "|",
@@ -75,6 +78,7 @@ const Diary = ({ FileInput }) => {
               "horizontalLine",
               "|",
               "image",
+              "insertImage",
               "imageUpload",
               "insertTable",
               "|",
