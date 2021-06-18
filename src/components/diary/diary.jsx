@@ -10,6 +10,7 @@ import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials.js";
 import FontColor from "@ckeditor/ckeditor5-font/src/fontcolor.js";
 import FontFamily from "@ckeditor/ckeditor5-font/src/fontfamily.js";
 import FontSize from "@ckeditor/ckeditor5-font/src/fontsize.js";
+import Highlight from "@ckeditor/ckeditor5-highlight/src/highlight";
 import HorizontalLine from "@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js";
 import Image from "@ckeditor/ckeditor5-image/src/image.js";
 import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption.js";
@@ -49,6 +50,7 @@ const installedPlugins = [
   Table,
   TableToolbar,
   Underline,
+  Highlight,
 ];
 
 const Diary = () => {
@@ -68,11 +70,13 @@ const Diary = () => {
               "fontFamily",
               "fontSize",
               "fontColor",
-              "alignment",
+              "highlight",
               "|",
               "bold",
               "italic",
               "underline",
+              "alignment",
+              "|",
               "specialCharacters",
               "horizontalLine",
               "|",
@@ -91,6 +95,14 @@ const Diary = () => {
                 "InfinitySans-RegularA1",
                 "IBMPlexSansKR-Regular",
                 "RixYeoljeongdo_Regular",
+              ],
+            },
+            image: {
+              toolbar: [
+                "imageStyle:full",
+                "imageStyle:side",
+                "|",
+                "imageTextAlternative",
               ],
             },
           }}
