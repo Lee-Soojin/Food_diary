@@ -25,7 +25,6 @@ import SpecialCharactersEssentials from "@ckeditor/ckeditor5-special-characters/
 import Heading from "@ckeditor/ckeditor5-heading/src/heading.js";
 import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline.js";
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
-import CKFinder from "@ckeditor/ckeditor5-ckfinder/src/ckfinder";
 import MyCustomUploadAdapterPlugin from "../custom_img_upload/custom_img_upload";
 
 const installedPlugins = [
@@ -52,7 +51,7 @@ const installedPlugins = [
   Underline,
 ];
 
-const Diary = ({ FileInput }) => {
+const Diary = () => {
   return (
     <div className={styles.Diary}>
       <Header />
@@ -77,16 +76,22 @@ const Diary = ({ FileInput }) => {
               "specialCharacters",
               "horizontalLine",
               "|",
-              "image",
               "insertImage",
-              "imageUpload",
               "insertTable",
               "|",
               "undo",
               "redo",
             ],
-            ckfinder: {
-              uploadUrl: "https://api.cloudinary.com/v1_1/soojin/image/upload",
+            fontfamily: {
+              options: [
+                "나눔고딕",
+                "나눔명조",
+                "Cafe24SsurroundAir",
+                "MaruBuri-Regular",
+                "InfinitySans-RegularA1",
+                "IBMPlexSansKR-Regular",
+                "RixYeoljeongdo_Regular",
+              ],
             },
           }}
           data="<p>Hello!</p>"
