@@ -1,0 +1,34 @@
+.Search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.search_phrase {
+  display: flex;
+  margin: 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4dba5b;
+}
+
+.search_input {
+  display: flex;
+  width: 19rem;
+  height: 1.5rem;
+  margin: 0 0.5rem;
+}
+
+.BtnSearch {
+  border: none;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 0.2rem;
+  height: 1.5rem;
+}
+
+.BtnSearch:hover {
+  transform: scale(1.05);
+}

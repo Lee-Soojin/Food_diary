@@ -27,6 +27,7 @@ import Heading from "@ckeditor/ckeditor5-heading/src/heading.js";
 import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline.js";
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
 import MyCustomUploadAdapterPlugin from "../custom_img_upload/custom_img_upload";
+import Search from "../search/search";
 
 const installedPlugins = [
   Alignment,
@@ -53,13 +54,14 @@ const installedPlugins = [
   Highlight,
 ];
 
-const Diary = () => {
+const Diary = ({ naver }) => {
   return (
     <div className={styles.Diary}>
       <Header />
       <div className={styles.Editor}>
         <h2 className={styles.greeting}>오늘의 하루를 기록하세요</h2>
         <input type="text" placeholder="제목" className={styles.title} />
+        <Search naver={naver} />
         <CKEditor
           editor={ClassicEditor}
           config={{
