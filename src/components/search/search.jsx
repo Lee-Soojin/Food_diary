@@ -2,18 +2,16 @@ import React, { useCallback, useRef, useState } from "react";
 import styles from "./search.module.css";
 
 const Search = ({ naver }) => {
-  const [places, setPlaces] = useState(null);
-  const [selectedPlace, setSelectedPlace] = useState(null);
+  // const [places, setPlaces] = useState(null);
+  // const [selectedPlace, setSelectedPlace] = useState(null);
   const inputRef = useRef();
 
   const search = useCallback(
     (query) => {
-      setSelectedPlace(null);
       naver
         .search(query) //
         .then((places) => {
-          setPlaces(places);
-          setSelectedPlace(null);
+          console.log(places);
         });
     },
     [naver]
@@ -23,10 +21,6 @@ const Search = ({ naver }) => {
     const value = inputRef.current.value;
     const result = search(value);
     console.log(result);
-  };
-
-  const selectPlace = (place) => {
-    setSelectedPlace(place);
   };
 
   const onKeyPress = (event) => {
@@ -58,9 +52,7 @@ const Search = ({ naver }) => {
           🔍
         </button>
       </div>
-      <div className={styles.Search_Result}>
-        <p>{places}</p>
-      </div>
+      <div className={styles.Search_Result}></div>
     </>
   );
 };
