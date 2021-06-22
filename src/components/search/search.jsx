@@ -1,14 +1,14 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./search.module.css";
 import "./search.css";
 
 const Search = ({ naver }) => {
   const inputRef = useRef();
-  const selectRef = useRef();
+  const listRef = useRef();
   const [places, setPlaces] = useState([]);
   const [place, setPlace] = useState("");
-  const [show, setShow] = useState(false);
-  const [hidden, setHidden] = useState(styles.hidden);
+  const [hidden, setHidden] = useState(true);
+  const isHidden = hidden ? styles.hidden : styles.visible;
 
   const search = useCallback(
     (query) => {
@@ -24,13 +24,12 @@ const Search = ({ naver }) => {
 
   const handleSearch = () => {
     const value = inputRef.current.value;
-    const result = search(value);
-    console.log(result);
-    setShow(true);
-    handleHidden();
+    search(value);
+    setHidden(false);
   };
 
   const onKeyPress = (event) => {
+    setPlaces([]);
     if (event.key === "Enter") {
       event.preventDefault();
       handleSearch();
@@ -38,23 +37,21 @@ const Search = ({ naver }) => {
   };
 
   const onClick = (event) => {
+    setPlaces([]);
     event.preventDefault();
     handleSearch();
   };
 
-  const handleHidden = () => {
-    const hidden = show ? styles.show : styles.hidden;
-    setHidden(hidden);
+  const handleSelectPlace = (event) => {
+    event.preventDefault();
+    const selectedPlace = event.currentTarget.textContent;
+    setPlace(selectedPlace);
+    setHidden(true);
   };
 
-  const handleClickPlace = (e) => {
-    e.preventDefault();
-    // setPlace(e.target);
-    // console.log(place);
-    // setShow(false);
-    setPlace(selectRef.current.value);
-    console.log(place);
-  };
+  useEffect(() => {
+    console.log("place: ", place);
+  }, [place]);
 
   return (
     <>
@@ -73,7 +70,27 @@ const Search = ({ naver }) => {
           🔍
         </button>
       </div>
-      <div className={styles.Search_Result}>
+      <div className={`${styles.Search_List}${isHidden}`}>
+        <ul className={styles.list_places}>
+          {places.map((place) => (
+            <li
+              className={styles.list_place}
+              onClick={handleSelectPlace}
+              key={place.mapx}
+              ref={listRef}
+            >
+              {place.title.replace("<b>", "").replace("</b>", "")}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+};
+
+export default Search;
+
+/* <div className={styles.Search_Result}>
         <select
           ref={selectRef}
           className={styles.selectBox}
@@ -87,12 +104,4 @@ const Search = ({ naver }) => {
             </option>
           ))}
         </select>
-      </div>
-      <div className={styles.selected_place}></div>
-    </>
-  );
-};
-
-export default Search;
-
-//
+      </div> */

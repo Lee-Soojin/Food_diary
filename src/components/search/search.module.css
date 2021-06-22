@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .search_phrase {
@@ -33,44 +33,42 @@
   transform: scale(1.05);
 }
 
-.Search_Result {
+.Search_List {
   display: flex;
   flex-direction: column;
   z-index: 1000;
   position: relative;
 }
 
-p {
-  color: black;
-}
-
-.result_list {
+.Search_List.hidden {
   display: flex;
   flex-direction: column;
   z-index: 1000;
-  width: 20rem;
-  position: fixed;
-  overflow: scroll;
-}
-
-.result_list.hidden {
+  position: relative;
   visibility: hidden;
 }
 
-.result_list.show {
-  visibility: visible;
-}
-
-.place_list {
+.Search_List.visible {
   display: flex;
-  height: 2rem;
-  width: 100%;
-  font-size: 0.8rem;
-  margin: 1rem 0;
-  cursor: pointer;
+  flex-direction: column;
+  z-index: 1000;
+  position: relative;
+  visibility: visible;
 }
 
 ul {
   display: flex;
   flex-direction: column;
+}
+
+.list_places {
+  display: flex;
+  flex-direction: column;
+}
+
+.list_place {
+  color: black;
+  display: flex;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
