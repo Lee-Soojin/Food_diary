@@ -8,7 +8,7 @@ const Header = (props) => {
       <div className={styles.logo}>
         <img src={logoImg} alt="Logo" className={styles.logoImg} />
       </div>
-      <ul>
+      <ul className={styles.menu}>
         <li>About</li>
         <li>Home</li>
         <li>My Page</li>

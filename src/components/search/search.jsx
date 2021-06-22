@@ -1,10 +1,14 @@
 import React, { useCallback, useRef, useState } from "react";
 import styles from "./search.module.css";
+import "./search.css";
 
 const Search = ({ naver }) => {
-  // const [places, setPlaces] = useState(null);
-  // const [selectedPlace, setSelectedPlace] = useState(null);
   const inputRef = useRef();
+  const selectRef = useRef();
+  const [places, setPlaces] = useState([]);
+  const [place, setPlace] = useState("");
+  const [show, setShow] = useState(false);
+  const [hidden, setHidden] = useState(styles.hidden);
 
   const search = useCallback(
     (query) => {
@@ -12,6 +16,7 @@ const Search = ({ naver }) => {
         .search(query) //
         .then((places) => {
           console.log(places);
+          setPlaces(places);
         });
     },
     [naver]
@@ -21,6 +26,8 @@ const Search = ({ naver }) => {
     const value = inputRef.current.value;
     const result = search(value);
     console.log(result);
+    setShow(true);
+    handleHidden();
   };
 
   const onKeyPress = (event) => {
@@ -33,6 +40,20 @@ const Search = ({ naver }) => {
   const onClick = (event) => {
     event.preventDefault();
     handleSearch();
+  };
+
+  const handleHidden = () => {
+    const hidden = show ? styles.show : styles.hidden;
+    setHidden(hidden);
+  };
+
+  const handleClickPlace = (e) => {
+    e.preventDefault();
+    // setPlace(e.target);
+    // console.log(place);
+    // setShow(false);
+    setPlace(selectRef.current.value);
+    console.log(place);
   };
 
   return (
@@ -52,9 +73,26 @@ const Search = ({ naver }) => {
           🔍
         </button>
       </div>
-      <div className={styles.Search_Result}></div>
+      <div className={styles.Search_Result}>
+        <select
+          ref={selectRef}
+          className={styles.selectBox}
+          onChange={handleClickPlace}
+        >
+          {places.map((place) => (
+            <option
+              value={`${place.title.replace("<b>", "").replace("</b>", "")}`}
+            >
+              {place.title.replace("<b>", "").replace("</b>", "")}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className={styles.selected_place}></div>
     </>
   );
 };
 
 export default Search;
+
+//

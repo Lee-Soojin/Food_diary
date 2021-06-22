@@ -35,7 +35,7 @@
   height: 22px;
 }
 
-ul {
+.menu {
   position: absolute;
   right: 2rem;
   display: flex;

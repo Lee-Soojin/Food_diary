@@ -32,3 +32,45 @@
 .BtnSearch:hover {
   transform: scale(1.05);
 }
+
+.Search_Result {
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  position: relative;
+}
+
+p {
+  color: black;
+}
+
+.result_list {
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  width: 20rem;
+  position: fixed;
+  overflow: scroll;
+}
+
+.result_list.hidden {
+  visibility: hidden;
+}
+
+.result_list.show {
+  visibility: visible;
+}
+
+.place_list {
+  display: flex;
+  height: 2rem;
+  width: 100%;
+  font-size: 0.8rem;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
