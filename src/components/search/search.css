@@ -1,0 +1,21 @@
+.Search_List {
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  position: relative;
+  width: 16rem;
+  margin-left: 2.2rem;
+  border: 1px solid gray;
+  border-top: none;
+  border-bottom: none;
+}
+
+.Search_List.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Search_List.hidden {
+  opacity: 0;
+  display: none;
+}

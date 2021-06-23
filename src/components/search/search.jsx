@@ -8,7 +8,7 @@ const Search = ({ naver }) => {
   const [places, setPlaces] = useState([]);
   const [place, setPlace] = useState("");
   const [hidden, setHidden] = useState(true);
-  const isHidden = hidden ? styles.hidden : styles.visible;
+  const isHidden = hidden ? "hidden" : "visible";
 
   const search = useCallback(
     (query) => {
@@ -51,7 +51,8 @@ const Search = ({ naver }) => {
 
   useEffect(() => {
     console.log("place: ", place);
-  }, [place]);
+    console.log(isHidden);
+  }, [place, isHidden]);
 
   return (
     <>
@@ -70,7 +71,7 @@ const Search = ({ naver }) => {
           🔍
         </button>
       </div>
-      <div className={`${styles.Search_List}${isHidden}`}>
+      <div className={`Search_List ${isHidden}`}>
         <ul className={styles.list_places}>
           {places.map((place) => (
             <li
@@ -84,24 +85,9 @@ const Search = ({ naver }) => {
           ))}
         </ul>
       </div>
+      <div className={styles.Search_Result}> 위치 : {place}</div>
     </>
   );
 };
 
 export default Search;
-
-/* <div className={styles.Search_Result}>
-        <select
-          ref={selectRef}
-          className={styles.selectBox}
-          onChange={handleClickPlace}
-        >
-          {places.map((place) => (
-            <option
-              value={`${place.title.replace("<b>", "").replace("</b>", "")}`}
-            >
-              {place.title.replace("<b>", "").replace("</b>", "")}
-            </option>
-          ))}
-        </select>
-      </div> */

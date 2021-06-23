@@ -6,6 +6,11 @@
   --button-background-color: #4dba5b;
 }
 
+@font-face {
+  font-family: "jua_regular";
+  src: url(../../fonts/Jua-Regular.ttf);
+}
+
 .Diary {
   display: flex;
   flex-direction: column;
@@ -51,6 +56,8 @@
   padding: 0.5rem;
   background-color: var(--button-background-color);
   color: white;
+  font-family: "jua_regular";
+  font-size: 1rem;
 }
 
 .BtnUpload:hover {
