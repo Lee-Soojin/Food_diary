@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Header from "../header/header";
 import styles from "./diary.module.css";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
@@ -28,6 +28,7 @@ import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline.js";
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
 import MyCustomUploadAdapterPlugin from "../custom_img_upload/custom_img_upload";
 import Search from "../search/search";
+import StarScore from "../star_score/star_score";
 
 const installedPlugins = [
   Alignment,
@@ -55,13 +56,32 @@ const installedPlugins = [
 ];
 
 const Diary = ({ naver }) => {
+  const [title, setTitle] = useState("");
+  const inputRef = useRef();
+
+  const handleTitle = (e) => {
+    const title = inputRef.current.value;
+    setTitle(title);
+  };
+
+  const handleUpload = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className={styles.Diary}>
       <Header />
       <div className={styles.Editor}>
         <h2 className={styles.greeting}>오늘의 하루를 기록하세요</h2>
-        <input type="text" placeholder="제목" className={styles.title} />
+        <input
+          type="text"
+          placeholder="제목"
+          className={styles.title}
+          onChange={handleTitle}
+          ref={inputRef}
+        />
         <Search naver={naver} />
+        <StarScore />
         <CKEditor
           editor={ClassicEditor}
           config={{
@@ -110,7 +130,9 @@ const Diary = ({ naver }) => {
           }}
           data="<p>Hello!</p>"
         />
-        <button className={styles.BtnUpload}>글 올리기</button>
+        <button className={styles.BtnUpload} onClick={handleUpload}>
+          글 올리기
+        </button>
       </div>
     </div>
   );

@@ -32,12 +32,14 @@
   width: 21.5ch;
   height: 2rem;
   margin: 0;
+  margin: auto;
   margin: 1rem 0;
   animation: typing 2s steps(13), blink 1s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
   font-size: 1.5rem;
+  align-items: center;
 }
 
 .title {
