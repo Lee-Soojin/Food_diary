@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Header from "../header/header";
 import styles from "./diary.module.css";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
@@ -29,6 +29,7 @@ import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
 import MyCustomUploadAdapterPlugin from "../custom_img_upload/custom_img_upload";
 import Search from "../search/search";
 import StarScore from "../star_score/star_score";
+import { useHistory } from "react-router-dom";
 
 const installedPlugins = [
   Alignment,
@@ -55,9 +56,13 @@ const installedPlugins = [
   Highlight,
 ];
 
-const Diary = ({ naver }) => {
+const Diary = ({ naver, authService }) => {
   const [title, setTitle] = useState("");
   const inputRef = useRef();
+
+  const history = useHistory();
+  const historyState = history?.location?.state;
+  const [userId, setUserId] = useState(historyState && historyState.id);
 
   const handleTitle = (e) => {
     const title = inputRef.current.value;
@@ -68,9 +73,19 @@ const Diary = ({ naver }) => {
     e.preventDefault();
   };
 
+  const onLogout = useCallback(() => {
+    authService.logout();
+  }, [authService]);
+
+  useEffect(() => {
+    authService.onAuthChange((user) => {
+      history.push("/");
+    });
+  });
+
   return (
     <div className={styles.Diary}>
-      <Header />
+      <Header authService={authService} Logout={onLogout} />
       <div className={styles.Editor}>
         <h2 className={styles.greeting}>오늘의 하루를 기록하세요</h2>
         <input

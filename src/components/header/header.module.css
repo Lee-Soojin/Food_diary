@@ -11,6 +11,11 @@
   src: url(../../fonts/Pacifico-Regular.ttf);
 }
 
+@font-face {
+  font-family: "jua_regular";
+  src: url(../../fonts/Jua-Regular.ttf);
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -38,7 +43,7 @@
 
 .menu {
   position: absolute;
-  right: 2rem;
+  right: 7rem;
   display: flex;
   flex-direction: row;
   font-family: "Pacifico_Regular";
@@ -47,7 +52,7 @@
   cursor: pointer;
 }
 
-li {
+.category {
   display: flex;
   list-style: none;
   padding: 0.5rem 3rem;
@@ -55,5 +60,27 @@ li {
 }
 
 li:hover {
+  transform: scale(1.1);
+}
+
+.BtnLogout {
+  position: absolute;
+  right: 2.2rem;
+  top: 2rem;
+  display: flex;
+  cursor: pointer;
+  font-family: "jua_regular";
+  color: green;
+  background-color: white;
+  border-radius: 1rem;
+  border: none;
+  width: 4rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  transition: all 10ms ease;
+}
+
+.BtnLogout:hover {
   transform: scale(1.1);
 }

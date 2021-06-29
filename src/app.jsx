@@ -11,7 +11,13 @@ function App({ FileInput, naver, authService }) {
       <Route exact path="/" component={Home}></Route>
       <Route
         path="/diary"
-        render={() => <Diary FileInput={FileInput} naver={naver} />}
+        render={() => (
+          <Diary
+            FileInput={FileInput}
+            naver={naver}
+            authService={authService}
+          />
+        )}
         exact
       />
       <Route

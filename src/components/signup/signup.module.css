@@ -1,0 +1,64 @@
+:root {
+  --text-color: #4dba5b;
+}
+
+@font-face {
+  font-family: "Pacifico_regular";
+  src: url(../../fonts/Pacifico-Regular.ttf);
+}
+
+.signup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40rem;
+  width: 30rem;
+  margin: auto;
+  margin-top: 8rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+}
+
+.title {
+  position: absolute;
+  top: 3rem;
+  margin: 0 auto;
+  display: flex;
+}
+
+.singup_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.email,
+.password,
+.name,
+.favoriteFood {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.input_email,
+.input_password,
+.input_name,
+.input_food {
+  display: flex;
+  height: 1.5rem;
+  width: 15rem;
+}
+
+.text_email,
+.text_password,
+.text_name,
+.text_food {
+  color: var(--text-color);
+  font-family: "Pacifico_regular";
+}
