@@ -16,12 +16,11 @@ const Login = ({ authService }) => {
             Google
           </button>
         </li>
-        {/* <li className={styles.login_twitter}>
-          <button className={styles.BtnTwitter} onClick={onLogin}>
-            Twitter
+        <li className={styles.login_facebook}>
+          <button className={styles.BtnFacebook} onClick={onLogin}>
+            Facebook
           </button>
-        </li> */}
-        {/* <li><button>Naver</button></li> */}
+        </li>
       </ul>
     </section>
   );

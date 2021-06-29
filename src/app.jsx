@@ -3,6 +3,7 @@ import Home from "./components/home/home";
 import Diary from "./components/diary/diary";
 import "./app.css";
 import Login from "./components/login/login";
+import SignUp from "./components/signup/signup";
 
 function App({ FileInput, naver, authService }) {
   return (
@@ -16,6 +17,10 @@ function App({ FileInput, naver, authService }) {
       <Route
         path="/login"
         render={() => <Login authService={authService} />}
+      ></Route>
+      <Route
+        path="/signup"
+        render={() => <SignUp authService={authService} />}
       ></Route>
     </BrowserRouter>
   );

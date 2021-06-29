@@ -1,14 +1,6 @@
 import axios from "axios";
 
 class Naver {
-  // constructor(clientID, clientSecret) {
-  //   this.clientID = clientID;
-  //   this.clientSecret = clientSecret;
-  //   // this.naver = axios.create({
-  //   //   baseURL: "https://openapi.naver.com/v1/search/local",
-  //   // });
-  // }
-
   clientID = "efDAPMPO5E__UqibZ1Or";
   clientSecret = "yKzenYVud8";
 
