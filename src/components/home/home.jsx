@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import Header from "../header/header";
 
-const Home = (props) => {
+const Home = ({ authService }) => {
   return (
     <>
-      <Header />
+      <Header authService={authService} />
     </>
   );
 };

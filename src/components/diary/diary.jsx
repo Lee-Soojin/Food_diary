@@ -75,6 +75,7 @@ const Diary = ({ naver, authService }) => {
 
   const onLogout = useCallback(() => {
     authService.logout();
+    history.push("/");
   }, [authService]);
 
   useEffect(() => {

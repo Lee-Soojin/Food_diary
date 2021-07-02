@@ -8,7 +8,11 @@ import SignUp from "./components/signup/signup";
 function App({ FileInput, naver, authService }) {
   return (
     <BrowserRouter>
-      <Route exact path="/" component={Home}></Route>
+      <Route
+        exact
+        path="/"
+        render={() => <Home authService={authService} />}
+      ></Route>
       <Route
         path="/diary"
         render={() => (

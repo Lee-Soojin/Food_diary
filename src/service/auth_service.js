@@ -11,7 +11,7 @@ class AuthService {
   }
 
   signIn(email, password) {
-    return firebaseAuth.signIWithEmailAndPassword(email, password);
+    return firebaseAuth.signInWithEmailAndPassword(email, password);
   }
 
   logout() {
@@ -21,6 +21,17 @@ class AuthService {
   onAuthChange(onUserChanged) {
     firebaseAuth.onAuthStateChanged((user) => {
       onUserChanged(user);
+    });
+  }
+
+  GetUser() {
+    firebaseAuth.onAuthStateChanged(function (user) {
+      if (user) {
+        const uid = user.uid;
+        return uid;
+      } else {
+        return;
+      }
     });
   }
 

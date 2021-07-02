@@ -59,11 +59,12 @@
   transition: all 0.3ms ease;
 }
 
-li:hover {
+.category:hover {
   transform: scale(1.1);
 }
 
-.BtnLogout {
+.BtnLogout,
+.BtnLogin {
   position: absolute;
   right: 2.2rem;
   top: 2rem;
@@ -81,6 +82,7 @@ li:hover {
   transition: all 10ms ease;
 }
 
-.BtnLogout:hover {
+.BtnLogout:hover,
+.BtnLogin:hover {
   transform: scale(1.1);
 }
