@@ -24,17 +24,6 @@ class AuthService {
     });
   }
 
-  GetUser() {
-    firebaseAuth.onAuthStateChanged(function (user) {
-      if (user) {
-        const uid = user.uid;
-        return uid;
-      } else {
-        return;
-      }
-    });
-  }
-
   getProvider(providerName) {
     switch (providerName) {
       case "Google":

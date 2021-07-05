@@ -27,7 +27,7 @@ const Login = ({ authService }) => {
   });
 
   const MemberLogin = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     authService
       .signIn(email, password) //
       .then(console.log);

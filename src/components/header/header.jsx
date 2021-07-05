@@ -3,10 +3,13 @@ import styles from "./header.module.css";
 import logoImg from "../../image/home_logo.png";
 import { useHistory } from "react-router-dom";
 import { getAuth } from "firebase/auth";
+import "./header.css";
 
 const Header = ({ authService }) => {
   const history = useHistory();
-  const [isUser, setisUser] = useState(false);
+  const historyState = history.location.state;
+  const [userId, setUserId] = useState(historyState && historyState.id);
+  const [isLogin, setisLogin] = useState(false);
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -19,22 +22,17 @@ const Header = ({ authService }) => {
     authService.logout();
   }, [authService]);
 
-  const user = authService.GetUser();
-  if (user) {
-    setisUser(true);
-  } else {
-    setisUser(false);
-  }
-  // useEffect(() => {
-  //   authService.onAuthChange((user) => {
-  //     if (user) {
-  //       setisUser(true);
-  //     } else {
-  //       history.push("/");
-  //       setisUser(false);
-  //     }
-  //   });
-  // });
+  useEffect(() => {
+    authService.onAuthChange((user) => {
+      if (user) {
+        setUserId(user.uid);
+        setisLogin(true);
+      } else {
+        console.log("no user");
+        setisLogin(false);
+      }
+    });
+  });
 
   return (
     <div className={styles.header}>
@@ -48,15 +46,18 @@ const Header = ({ authService }) => {
         <li className={styles.category}>Menu</li>
         <li className={styles.category}>Menu</li>
       </ul>
-      {!isUser ? (
-        <button className={styles.BtnLogin} onClick={onLogin}>
-          로그인
-        </button>
-      ) : (
-        <button className={styles.BtnLogout} onClick={onLogout}>
-          로그아웃
-        </button>
-      )}
+      <button
+        className={`BtnLogout ${isLogin ? "visible" : "invisible"}`}
+        onClick={onLogout}
+      >
+        로그아웃
+      </button>
+      <button
+        className={`BtnLogin ${isLogin ? "invisible" : "visible"}`}
+        onClick={onLogin}
+      >
+        로그인
+      </button>
     </div>
   );
 };

@@ -10,7 +10,6 @@ import AuthService from "./service/auth_service";
 const imageUploader = new ImageUploader();
 const FileInput = (props) => new MyCustomUploadAdapterPlugin(imageUploader);
 const authService = new AuthService();
-
 const naver = new Naver();
 
 ReactDOM.render(

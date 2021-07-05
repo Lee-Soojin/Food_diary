@@ -78,11 +78,11 @@ const Diary = ({ naver, authService }) => {
     history.push("/");
   }, [authService]);
 
-  useEffect(() => {
-    authService.onAuthChange((user) => {
-      history.push("/");
-    });
-  });
+  // useEffect(() => {
+  //   authService.onAuthChange((user) => {
+  //     history.push("/");
+  //   });
+  // });
 
   return (
     <div className={styles.Diary}>

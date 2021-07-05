@@ -62,7 +62,7 @@
 .category:hover {
   transform: scale(1.1);
 }
-
+/* 
 .BtnLogout,
 .BtnLogin {
   position: absolute;
@@ -80,6 +80,31 @@
   align-items: center;
   justify-content: center;
   transition: all 10ms ease;
+} */
+
+.BtnLogout.visible,
+.BtnLogin.visible {
+  display: flex;
+  position: absolute;
+  right: 2.2rem;
+  top: 2rem;
+  display: flex;
+  cursor: pointer;
+  font-family: "jua_regular";
+  color: green;
+  background-color: white;
+  border-radius: 1rem;
+  border: none;
+  width: 4rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  transition: all 10ms ease;
+}
+
+.BtnLogout.invisible,
+.BtnLogin.invisible {
+  display: none;
 }
 
 .BtnLogout:hover,
