@@ -40,11 +40,21 @@ const Header = ({ authService }) => {
         <img src={logoImg} alt="Logo" className={styles.logoImg} />
       </div>
       <ul className={styles.menu}>
-        <li className={styles.category}>About</li>
-        <li className={styles.category}>Home</li>
-        <li className={styles.category}>My Page</li>
-        <li className={styles.category}>Menu</li>
-        <li className={styles.category}>Menu</li>
+        <li className={styles.category} key="about">
+          About
+        </li>
+        <li className={styles.category} key="home">
+          Home
+        </li>
+        <li className={styles.category} key="mypage">
+          My Page
+        </li>
+        <li className={styles.category} key="menu">
+          Menu
+        </li>
+        <li className={styles.category} key="menu2">
+          Menu
+        </li>
       </ul>
       <button
         className={`BtnLogout ${isLogin ? "visible" : "invisible"}`}

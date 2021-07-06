@@ -80,12 +80,12 @@ const Login = ({ authService }) => {
         </form>
       </div>
       <ul>
-        <li className={styles.login_google}>
+        <li className={styles.login_google} key="google_login">
           <button className={styles.BtnGoogle} onClick={onLogin}>
             Google
           </button>
         </li>
-        <li className={styles.login_facebook}>
+        <li className={styles.login_facebook} key="facebook_login">
           <button className={styles.BtnFacebook} onClick={onLogin}>
             Facebook
           </button>

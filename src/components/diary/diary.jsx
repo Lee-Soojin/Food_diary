@@ -58,7 +58,9 @@ const installedPlugins = [
 
 const Diary = ({ naver, authService }) => {
   const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const inputRef = useRef();
+  const diaryRef = useRef();
 
   const history = useHistory();
   const historyState = history?.location?.state;
@@ -69,26 +71,34 @@ const Diary = ({ naver, authService }) => {
     setTitle(title);
   };
 
-  const handleUpload = (e) => {
-    e.preventDefault();
-  };
-
   const onLogout = useCallback(() => {
     authService.logout();
     history.push("/");
   }, [authService]);
 
-  // useEffect(() => {
-  //   authService.onAuthChange((user) => {
-  //     history.push("/");
-  //   });
-  // });
+  const handleChange = (event, editor) => {
+    const data = editor.getData();
+    setContent(data);
+    console.log(data);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  let today = new Date();
+  let year = today.getFullYear();
+  let month = today.getMonth();
+  let day = today.getDay();
+
+  const date = `${year} 년 ${month}월 ${day}일`;
 
   return (
     <div className={styles.Diary}>
       <Header authService={authService} Logout={onLogout} />
       <div className={styles.Editor}>
         <h2 className={styles.greeting}>오늘의 하루를 기록하세요</h2>
+        <h4 className={styles.Date}>{date} </h4>
         <input
           type="text"
           placeholder="제목"
@@ -98,57 +108,65 @@ const Diary = ({ naver, authService }) => {
         />
         <Search naver={naver} />
         <StarScore />
-        <CKEditor
-          editor={ClassicEditor}
-          config={{
-            plugins: [...installedPlugins, MyCustomUploadAdapterPlugin],
-            toolbar: [
-              "heading",
-              "|",
-              "fontFamily",
-              "fontSize",
-              "fontColor",
-              "highlight",
-              "|",
-              "bold",
-              "italic",
-              "underline",
-              "alignment",
-              "|",
-              "specialCharacters",
-              "horizontalLine",
-              "|",
-              "insertImage",
-              "insertTable",
-              "|",
-              "undo",
-              "redo",
-            ],
-            fontfamily: {
-              options: [
-                "나눔고딕",
-                "나눔명조",
-                "Cafe24SsurroundAir",
-                "MaruBuri-Regular",
-                "InfinitySans-RegularA1",
-                "IBMPlexSansKR-Regular",
-                "RixYeoljeongdo_Regular",
-              ],
-            },
-            image: {
+        <form onSubmit={handleSubmit} className={styles.Editor_wrap}>
+          <CKEditor
+            editor={ClassicEditor}
+            config={{
+              plugins: [...installedPlugins, MyCustomUploadAdapterPlugin],
               toolbar: [
-                "imageStyle:full",
-                "imageStyle:side",
+                "heading",
                 "|",
-                "imageTextAlternative",
+                "fontFamily",
+                "fontSize",
+                "fontColor",
+                "highlight",
+                "|",
+                "bold",
+                "italic",
+                "underline",
+                "alignment",
+                "|",
+                "specialCharacters",
+                "horizontalLine",
+                "|",
+                "insertImage",
+                "insertTable",
+                "|",
+                "undo",
+                "redo",
               ],
-            },
-          }}
-          data="<p>Hello!</p>"
-        />
-        <button className={styles.BtnUpload} onClick={handleUpload}>
-          글 올리기
-        </button>
+              fontfamily: {
+                options: [
+                  "나눔고딕",
+                  "나눔명조",
+                  "Cafe24SsurroundAir",
+                  "MaruBuri-Regular",
+                  "InfinitySans-RegularA1",
+                  "IBMPlexSansKR-Regular",
+                  "RixYeoljeongdo_Regular",
+                ],
+              },
+              image: {
+                toolbar: [
+                  "imageStyle:full",
+                  "imageStyle:side",
+                  "|",
+                  "imageTextAlternative",
+                ],
+              },
+            }}
+            data="<p>Hello!</p>"
+            onChange={handleChange}
+          />
+          <button
+            className={styles.BtnUpload}
+            type="submit"
+            id="BtnUpload"
+            onClick={handleSubmit}
+          >
+            글 올리기
+          </button>
+        </form>
       </div>
     </div>
   );
