@@ -4,6 +4,7 @@ import Diary from "./components/diary/diary";
 import "./app.css";
 import Login from "./components/login/login";
 import SignUp from "./components/signup/signup";
+import Board from "./components/board/board";
 
 function App({ FileInput, naver, authService }) {
   return (
@@ -24,6 +25,7 @@ function App({ FileInput, naver, authService }) {
         )}
         exact
       />
+      <Route path="/board" render={() => <Board />}></Route>
       <Route
         path="/login"
         render={() => <Login authService={authService} />}

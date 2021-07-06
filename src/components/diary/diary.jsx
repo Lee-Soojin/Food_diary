@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import Header from "../header/header";
 import styles from "./diary.module.css";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
@@ -30,6 +30,7 @@ import MyCustomUploadAdapterPlugin from "../custom_img_upload/custom_img_upload"
 import Search from "../search/search";
 import StarScore from "../star_score/star_score";
 import { useHistory } from "react-router-dom";
+import Board from "../board/board";
 
 const installedPlugins = [
   Alignment,
@@ -58,9 +59,9 @@ const installedPlugins = [
 
 const Diary = ({ naver, authService }) => {
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState(<div> </div>);
+  const [pos, setPos] = useState("");
   const inputRef = useRef();
-  const diaryRef = useRef();
 
   const history = useHistory();
   const historyState = history?.location?.state;
@@ -168,6 +169,7 @@ const Diary = ({ naver, authService }) => {
           </button>
         </form>
       </div>
+      <Board date={date} title={title} content={content} pos={pos} />
     </div>
   );
 };

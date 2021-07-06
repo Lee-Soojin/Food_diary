@@ -1,0 +1,10 @@
+div.container > figure,
+div.container > img {
+  display: flex;
+  max-width: 10rem;
+}
+
+figure > img {
+  display: flex;
+  max-width: 10rem;
+}

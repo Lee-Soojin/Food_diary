@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from "react";
 import styles from "./header.module.css";
 import logoImg from "../../image/home_logo.png";
 import { useHistory } from "react-router-dom";
-import { getAuth } from "firebase/auth";
 import "./header.css";
 
 const Header = ({ authService }) => {
@@ -49,8 +48,8 @@ const Header = ({ authService }) => {
         <li className={styles.category} key="mypage">
           My Page
         </li>
-        <li className={styles.category} key="menu">
-          Menu
+        <li className={styles.category} key="board">
+          Board
         </li>
         <li className={styles.category} key="menu2">
           Menu
