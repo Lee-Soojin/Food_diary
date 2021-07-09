@@ -4,6 +4,7 @@
 
 .ck-editor__editable:not(.ck-editor__nested-editable) {
   min-height: 500px;
+  min-width: 770px;
 }
 
 @font-face {

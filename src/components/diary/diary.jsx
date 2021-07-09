@@ -30,7 +30,7 @@ import MyCustomUploadAdapterPlugin from "../custom_img_upload/custom_img_upload"
 import Search from "../search/search";
 import StarScore from "../star_score/star_score";
 import { useHistory } from "react-router-dom";
-import Board from "../board/board";
+import Post from "../post/post";
 
 const installedPlugins = [
   Alignment,
@@ -80,7 +80,6 @@ const Diary = ({ naver, authService }) => {
   const handleChange = (event, editor) => {
     const data = editor.getData();
     setContent(data);
-    console.log(data);
   };
 
   const handleSubmit = (e) => {
@@ -156,7 +155,7 @@ const Diary = ({ naver, authService }) => {
                 ],
               },
             }}
-            data="<p>Hello!</p>"
+            data="<p></p>"
             onChange={handleChange}
           />
           <button
@@ -169,7 +168,7 @@ const Diary = ({ naver, authService }) => {
           </button>
         </form>
       </div>
-      <Board date={date} title={title} content={content} pos={pos} />
+      <Post date={date} title={title} content={content} pos={pos} />
     </div>
   );
 };
