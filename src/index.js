@@ -9,7 +9,7 @@ import AuthService from "./service/auth_service";
 import Repository from "./service/repository";
 
 const imageUploader = new ImageUploader();
-const Repository = new Repository();
+const repository = new Repository();
 const FileInput = (props) => new MyCustomUploadAdapterPlugin(imageUploader);
 const authService = new AuthService();
 const naver = new Naver();
@@ -20,7 +20,7 @@ ReactDOM.render(
       FileInput={FileInput}
       naver={naver}
       authService={authService}
-      Repository={Repository}
+      Repository={repository}
     />
   </React.StrictMode>,
   document.getElementById("root")

@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Header from "../header/header";
 import styles from "./diary.module.css";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
@@ -57,7 +57,8 @@ const installedPlugins = [
   Highlight,
 ];
 
-const Diary = ({ naver, authService }) => {
+const Diary = ({ naver, authService, Repository }) => {
+  const [posts, setPosts] = useState({});
   const [title, setTitle] = useState("");
   const [content, setContent] = useState(<div> </div>);
   const [pos, setPos] = useState("");
@@ -82,8 +83,32 @@ const Diary = ({ naver, authService }) => {
     setContent(data);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    const stopSync = Repository.syncPosts(userId, (posts) => {
+      setPosts(posts);
+    });
+    return () => stopSync();
+  }, [userId, Repository]);
+
+  const UpdatePost = (post) => {
+    setPosts((posts) => {
+      const updated = { ...posts };
+      updated[post.id] = post;
+      return updated;
+    });
+    Repository.savePost(userId, post);
+  };
+
+  const DeletePost = (post) => {
+    setPosts((posts) => {
+      const updated = { ...posts };
+      delete updated[post.id];
+      return updated;
+    });
+    Repository.removePost(userId, post);
   };
 
   let today = new Date();
@@ -108,7 +133,7 @@ const Diary = ({ naver, authService }) => {
         />
         <Search naver={naver} />
         <StarScore />
-        <form onSubmit={handleSubmit} className={styles.Editor_wrap}>
+        <form onSubmit={UpdatePost} className={styles.Editor_wrap}>
           <CKEditor
             editor={ClassicEditor}
             config={{
@@ -162,13 +187,19 @@ const Diary = ({ naver, authService }) => {
             className={styles.BtnUpload}
             type="submit"
             id="BtnUpload"
-            onClick={handleSubmit}
+            onClick={UpdatePost}
           >
             글 올리기
           </button>
         </form>
       </div>
-      <Post date={date} title={title} content={content} pos={pos} />
+      <Post
+        date={date}
+        title={title}
+        content={content}
+        pos={pos}
+        posts={posts}
+      />
     </div>
   );
 };
