@@ -31,6 +31,7 @@ import Search from "../search/search";
 import StarScore from "../star_score/star_score";
 import { useHistory } from "react-router-dom";
 import Post from "../post/post";
+import Posts from "../posts/posts";
 
 const installedPlugins = [
   Alignment,
@@ -58,10 +59,17 @@ const installedPlugins = [
 ];
 
 const Diary = ({ naver, authService, Repository }) => {
-  const [posts, setPosts] = useState({});
+  const [posts, setPosts] = useState({
+    title: "",
+    content: <div></div>,
+    pos: "",
+    date: "",
+  });
   const [title, setTitle] = useState("");
   const [content, setContent] = useState(<div> </div>);
   const [pos, setPos] = useState("");
+  let [date, setDate] = useState("");
+
   const inputRef = useRef();
 
   const history = useHistory();
@@ -90,6 +98,7 @@ const Diary = ({ naver, authService, Repository }) => {
     const stopSync = Repository.syncPosts(userId, (posts) => {
       setPosts(posts);
     });
+
     return () => stopSync();
   }, [userId, Repository]);
 
@@ -100,6 +109,7 @@ const Diary = ({ naver, authService, Repository }) => {
       return updated;
     });
     Repository.savePost(userId, post);
+    console.log(post);
   };
 
   const DeletePost = (post) => {
@@ -111,19 +121,37 @@ const Diary = ({ naver, authService, Repository }) => {
     Repository.removePost(userId, post);
   };
 
-  let today = new Date();
-  let year = today.getFullYear();
-  let month = today.getMonth();
-  let day = today.getDay();
+  const handleDate = () => {
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth() + 1;
+    let day = today.getDate();
+    let todayDate = `${year} 년 ${month}월 ${day}일`;
+    setDate(todayDate);
+  };
 
-  const date = `${year} 년 ${month}월 ${day}일`;
+  useEffect(() => {
+    handleDate();
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const post = {
+      id: Date.now(),
+      title,
+      pos,
+      content,
+      date,
+    };
+    UpdatePost(post);
+  };
 
   return (
     <div className={styles.Diary}>
       <Header authService={authService} Logout={onLogout} />
       <div className={styles.Editor}>
         <h2 className={styles.greeting}>오늘의 하루를 기록하세요</h2>
-        <h4 className={styles.Date}>{date} </h4>
+        <h4 className={styles.Date}>{date}</h4>
         <input
           type="text"
           placeholder="제목"
@@ -187,19 +215,13 @@ const Diary = ({ naver, authService, Repository }) => {
             className={styles.BtnUpload}
             type="submit"
             id="BtnUpload"
-            onClick={UpdatePost}
+            onClick={handleSubmit}
           >
             글 올리기
           </button>
         </form>
       </div>
-      <Post
-        date={date}
-        title={title}
-        content={content}
-        pos={pos}
-        posts={posts}
-      />
+      <Posts deletePost={DeletePost} updatePost={UpdatePost} posts={posts} />
     </div>
   );
 };

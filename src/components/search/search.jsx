@@ -2,20 +2,20 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./search.module.css";
 import "./search.css";
 
-const Search = ({ naver }) => {
+const Search = ({ naver, ref }) => {
   const inputRef = useRef();
   const listRef = useRef();
   const [places, setPlaces] = useState([]);
   const [place, setPlace] = useState("");
   const [hidden, setHidden] = useState(true);
   const isHidden = hidden ? "hidden" : "visible";
+  ref = place;
 
   const search = useCallback(
     (query) => {
       naver
         .search(query) //
         .then((places) => {
-          console.log(places);
           setPlaces(places);
         });
     },
@@ -48,11 +48,6 @@ const Search = ({ naver }) => {
     setPlace(selectedPlace);
     setHidden(true);
   };
-
-  useEffect(() => {
-    console.log("place: ", place);
-    console.log(isHidden);
-  }, [place, isHidden]);
 
   return (
     <>
