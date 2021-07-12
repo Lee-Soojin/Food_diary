@@ -59,12 +59,7 @@ const installedPlugins = [
 ];
 
 const Diary = ({ naver, authService, Repository }) => {
-  const [posts, setPosts] = useState({
-    title: "",
-    content: <div></div>,
-    pos: "",
-    date: "",
-  });
+  const [posts, setPosts] = useState({});
   const [title, setTitle] = useState("");
   const [content, setContent] = useState(<div> </div>);
   const [pos, setPos] = useState("");
