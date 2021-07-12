@@ -47,6 +47,7 @@ const Search = ({ naver, ref }) => {
     const selectedPlace = event.currentTarget.textContent;
     setPlace(selectedPlace);
     setHidden(true);
+    inputRef.current.value = "";
   };
 
   return (

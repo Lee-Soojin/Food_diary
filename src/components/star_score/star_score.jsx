@@ -20,7 +20,6 @@ const StarScore = (props) => {
         starState[i] = false;
       }
     }
-
     setStar(starState);
   };
 

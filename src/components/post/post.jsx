@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./post.module.css";
 
-const Post = ({ updatePost, deletePost, post, key }) => {
+const Post = ({ updatePost, deletePost, post }) => {
   const onClick = (e) => {
-    deletePost();
+    deletePost(post);
   };
 
   const handleRewrite = () => {

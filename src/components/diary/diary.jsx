@@ -59,6 +59,7 @@ const installedPlugins = [
 ];
 
 const Diary = ({ naver, authService, Repository }) => {
+  const [editor, setEditor] = useState(undefined);
   const [posts, setPosts] = useState({});
   const [title, setTitle] = useState("");
   const [content, setContent] = useState(<div> </div>);
@@ -138,6 +139,11 @@ const Diary = ({ naver, authService, Repository }) => {
       content,
       date,
     };
+    setTitle("");
+    setContent(<div></div>);
+    setPos("");
+    inputRef.current.value = "";
+    editor.setData("");
     UpdatePost(post);
   };
 
@@ -159,6 +165,7 @@ const Diary = ({ naver, authService, Repository }) => {
         <form onSubmit={UpdatePost} className={styles.Editor_wrap}>
           <CKEditor
             editor={ClassicEditor}
+            onReady={(editor) => setEditor(editor)}
             config={{
               plugins: [...installedPlugins, MyCustomUploadAdapterPlugin],
               toolbar: [
@@ -204,6 +211,7 @@ const Diary = ({ naver, authService, Repository }) => {
               },
             }}
             data="<p></p>"
+            name="CKeditor"
             onChange={handleChange}
           />
           <button
