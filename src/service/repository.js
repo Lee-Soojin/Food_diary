@@ -2,7 +2,7 @@ import { firebaseDatabase } from "./firebase";
 
 class Repository {
   syncPosts(userId, onUpdate) {
-    const ref = firebaseDatabase.ref(`${userId}/posts`);
+    const ref = firebaseDatabase.ref(`${userId}/board`);
     ref.on("value", (snapshot) => {
       const data = snapshot.val();
       data && onUpdate(data);
@@ -11,11 +11,12 @@ class Repository {
   }
 
   savePost(userId, post) {
-    firebaseDatabase.ref(`${userId}/posts/${post.id}`).set(post);
+    firebaseDatabase.ref(`${userId}/board/${post.id}`).set(post);
+    console.log("userid:", userId);
   }
 
   removePost(userId, post) {
-    firebaseDatabase.ref(`${userId}/posts/${post.id}`).remove();
+    firebaseDatabase.ref(`${userId}/board/${post.id}`).remove();
   }
 }
 

@@ -7,7 +7,7 @@ const Post = ({ updatePost, deletePost, post }) => {
   };
 
   const handleRewrite = () => {
-    updatePost();
+    updatePost(post);
   };
 
   const [date, setDate] = useState("");

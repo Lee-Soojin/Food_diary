@@ -30,8 +30,7 @@ import MyCustomUploadAdapterPlugin from "../custom_img_upload/custom_img_upload"
 import Search from "../search/search";
 import StarScore from "../star_score/star_score";
 import { useHistory } from "react-router-dom";
-import Post from "../post/post";
-import Posts from "../posts/posts";
+import Board from "../board/board";
 
 const installedPlugins = [
   Alignment,
@@ -64,12 +63,12 @@ const Diary = ({ naver, authService, Repository }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState(<div> </div>);
   const [pos, setPos] = useState("");
-  let [date, setDate] = useState("");
+  const [date, setDate] = useState("");
 
   const inputRef = useRef();
 
   const history = useHistory();
-  const historyState = history?.location?.state;
+  const historyState = history.location.state;
   const [userId, setUserId] = useState(historyState && historyState.id);
 
   const handleTitle = (e) => {
@@ -86,6 +85,16 @@ const Diary = ({ naver, authService, Repository }) => {
     const data = editor.getData();
     setContent(data);
   };
+
+  useEffect(() => {
+    authService.onAuthChange((user) => {
+      if (user) {
+        setUserId(user.uid);
+      } else {
+        history.push("/");
+      }
+    });
+  });
 
   useEffect(() => {
     if (!userId) {
@@ -162,7 +171,7 @@ const Diary = ({ naver, authService, Repository }) => {
         />
         <Search naver={naver} />
         <StarScore />
-        <form onSubmit={UpdatePost} className={styles.Editor_wrap}>
+        <form className={styles.Editor_wrap}>
           <CKEditor
             editor={ClassicEditor}
             onReady={(editor) => setEditor(editor)}
@@ -224,7 +233,12 @@ const Diary = ({ naver, authService, Repository }) => {
           </button>
         </form>
       </div>
-      <Posts deletePost={DeletePost} updatePost={UpdatePost} posts={posts} />
+      <Board
+        userId={userId}
+        deletePost={DeletePost}
+        updatePost={UpdatePost}
+        posts={posts}
+      />
     </div>
   );
 };

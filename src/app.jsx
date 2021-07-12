@@ -6,6 +6,7 @@ import Login from "./components/login/login";
 import SignUp from "./components/signup/signup";
 import Post from "./components/post/post";
 import Board from "./components/board/board";
+import Posts from "./components/posts/posts";
 
 function App({ FileInput, naver, authService, Repository }) {
   return (

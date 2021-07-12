@@ -1,11 +1,20 @@
-import React from "react";
-import Post from "../post/post";
+import React, { useEffect, useState } from "react";
+import Posts from "../posts/posts";
 import styles from "./board.module.css";
 
-const Board = (props) => {
+const Board = ({ deletePost, updatePost, posts, userId }) => {
+  const [board, setBoard] = useState();
+
+  useEffect(() => {
+    setBoard(posts);
+  });
+
+  console.log(posts);
   return (
     <>
-      <Post />
+      {posts && (
+        <Posts deletePost={deletePost} updatePost={updatePost} posts={posts} />
+      )}
     </>
   );
 };
