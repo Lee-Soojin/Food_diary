@@ -22,6 +22,7 @@ const Post = ({ updatePost, deletePost, post }) => {
     setPos(post.pos);
     setContent(post.content);
     setScore(post.score);
+    console.log(post);
   });
 
   return (

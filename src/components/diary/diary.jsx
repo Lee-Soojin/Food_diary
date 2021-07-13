@@ -31,7 +31,6 @@ import Search from "../search/search";
 import StarScore from "../star_score/star_score";
 import { useHistory } from "react-router-dom";
 import BoardList from "../board_list/board_list";
-import Board from "../board/board";
 
 const installedPlugins = [
   Alignment,
@@ -170,7 +169,6 @@ const Diary = ({ naver, authService, Repository }) => {
     inputRef.current.value = "";
     editor.setData("");
     UpdatePost(post);
-    console.log(posts);
   };
 
   return (
