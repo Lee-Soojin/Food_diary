@@ -64,8 +64,10 @@ const Diary = ({ naver, authService, Repository }) => {
   const [content, setContent] = useState(<div> </div>);
   const [pos, setPos] = useState("");
   const [date, setDate] = useState("");
+  const [postId, setPostId] = useState([]);
 
   const inputRef = useRef();
+  const searchRef = useRef();
 
   const history = useHistory();
   const historyState = history.location.state;
@@ -148,6 +150,9 @@ const Diary = ({ naver, authService, Repository }) => {
       content,
       date,
     };
+    const postid = [...postId];
+    postid.push(post.id);
+    setPostId(postid);
     setTitle("");
     setContent(<div></div>);
     setPos("");
@@ -169,8 +174,8 @@ const Diary = ({ naver, authService, Repository }) => {
           onChange={handleTitle}
           ref={inputRef}
         />
-        <Search naver={naver} />
-        <StarScore />
+        <Search naver={naver} ref={searchRef} />
+        <StarScore Repository={Repository} userId={userId} postId={postId} />
         <form className={styles.Editor_wrap}>
           <CKEditor
             editor={ClassicEditor}

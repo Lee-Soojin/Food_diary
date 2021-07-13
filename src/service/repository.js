@@ -18,6 +18,12 @@ class Repository {
   removePost(userId, post) {
     firebaseDatabase.ref(`${userId}/board/${post.id}`).remove();
   }
+
+  setPost(userId, postId, score) {
+    firebaseDatabase
+      .ref(`${userId}/board/${postId}/score`)
+      .set({ score: score });
+  }
 }
 
 export default Repository;

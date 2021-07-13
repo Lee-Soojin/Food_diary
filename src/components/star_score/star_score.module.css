@@ -27,3 +27,8 @@
 .fullstar:hover {
   transform: scale(1.1);
 }
+
+.score_number {
+  display: flex;
+  font-size: 0.7rem;
+}

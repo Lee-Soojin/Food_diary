@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./star_score.module.css";
 import { BsStar, BsStarFill } from "react-icons/bs";
 
-const StarScore = (props) => {
+const StarScore = ({ Repository, userId, postId }) => {
   const [star, setStar] = useState([false, false, false, false, false]);
   const [number, setNumber] = useState(0);
 
@@ -21,6 +21,8 @@ const StarScore = (props) => {
       }
     }
     setStar(starState);
+    setNumber(index + 1);
+    Repository.setPost(userId, postId, number);
   };
 
   const array = [0, 1, 2, 3, 4];
@@ -44,13 +46,10 @@ const StarScore = (props) => {
             ></BsStar>
           )
         )}
+        {(number) => 1 && <p className={styles.score_number}>{number}</p>}
       </div>
     </>
   );
 };
 
 export default StarScore;
-
-//BsStar
-//BsStarFill
-//BsStarHalf
