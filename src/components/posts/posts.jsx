@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Post from "../post/post";
 import styles from "./posts.module.css";
 
-const Posts = ({ deletePost, updatePost, posts }) => {
+const Posts = ({ deletePost, updatePost, posts, Repository }) => {
   return (
     <>
       <div className={styles.Posts_container}>

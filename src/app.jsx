@@ -23,7 +23,6 @@ function App({ FileInput, naver, authService, Repository }) {
             FileInput={FileInput}
             naver={naver}
             authService={authService}
-            Repository={Repository}
           />
         )}
         exact
@@ -39,7 +38,9 @@ function App({ FileInput, naver, authService, Repository }) {
       ></Route>
       <Route
         path="/board"
-        render={() => <Board authService={authService} />}
+        render={() => (
+          <Board authService={authService} Repository={Repository} />
+        )}
       ></Route>
     </BrowserRouter>
   );

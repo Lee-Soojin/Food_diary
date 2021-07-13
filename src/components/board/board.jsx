@@ -1,20 +1,30 @@
 import React, { useEffect, useState } from "react";
-import Posts from "../posts/posts";
-import styles from "./board.module.css";
+import { useHistory } from "react-router-dom";
 
-const Board = ({ deletePost, updatePost, posts, userId }) => {
-  const [board, setBoard] = useState();
-
+const Board = ({ Repository, authService }) => {
+  const history = useHistory();
+  const historyState = history.location.state;
+  const [userId, setUserId] = useState(historyState && historyState.id);
+  const [posts, setPosts] = useState({});
   useEffect(() => {
-    setBoard(posts);
+    authService.onAuthChange((user) => {
+      if (user) {
+        setUserId(user.uid);
+      } else {
+        history.push("/");
+      }
+    });
   });
 
-  console.log(posts);
+  useEffect(() => {
+    const post = userId && Repository.getPost(userId);
+    setPosts(Repository.board);
+    console.log(posts);
+  });
+
   return (
     <>
-      {posts && (
-        <Posts deletePost={deletePost} updatePost={updatePost} posts={posts} />
-      )}
+      <h1> hello </h1>
     </>
   );
 };

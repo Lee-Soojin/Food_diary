@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./star_score.module.css";
 import { BsStar, BsStarFill } from "react-icons/bs";
 
-const StarScore = ({ onChange }) => {
+const StarScore = ({ onChange, score }) => {
   const [star, setStar] = useState([false, false, false, false, false]);
   const [number, setNumber] = useState(0);
 
-  const handleMouseOver = (event) => {
-    event.preventDefault();
-  };
-
   const handleClick = (event, index) => {
-    let starState = [...star];
     event.preventDefault();
+    let starState = [...star];
     for (let i = 0; i < 5; i++) {
       if (i <= index) {
         starState[i] = true;
@@ -40,7 +36,6 @@ const StarScore = ({ onChange }) => {
           ) : (
             <BsStar
               className={styles.star}
-              onMouseOver={handleMouseOver}
               onClick={(e) => handleClick(e, num)}
               value={num}
             ></BsStar>

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./search.module.css";
 import "./search.css";
 
-const Search = ({ naver, ref }) => {
+const Search = ({ naver, ref, onChange }) => {
   const inputRef = useRef();
   const listRef = useRef();
   const [places, setPlaces] = useState([]);
@@ -46,6 +46,7 @@ const Search = ({ naver, ref }) => {
     event.preventDefault();
     const selectedPlace = event.currentTarget.textContent;
     setPlace(selectedPlace);
+    onChange(place);
     setHidden(true);
     inputRef.current.value = "";
   };

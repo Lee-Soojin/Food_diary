@@ -30,6 +30,7 @@ import MyCustomUploadAdapterPlugin from "../custom_img_upload/custom_img_upload"
 import Search from "../search/search";
 import StarScore from "../star_score/star_score";
 import { useHistory } from "react-router-dom";
+import BoardList from "../board_list/board_list";
 import Board from "../board/board";
 
 const installedPlugins = [
@@ -68,7 +69,6 @@ const Diary = ({ naver, authService, Repository }) => {
   const [postId, setPostId] = useState("");
 
   const inputRef = useRef();
-  const searchRef = useRef();
 
   const history = useHistory();
   const historyState = history.location.state;
@@ -144,7 +144,10 @@ const Diary = ({ naver, authService, Repository }) => {
 
   const handleScore = (score) => {
     setScore(score);
-    console.log(`score:`, score);
+  };
+
+  const handlePlace = (place) => {
+    setPos(place);
   };
 
   const handleSubmit = (event) => {
@@ -167,6 +170,7 @@ const Diary = ({ naver, authService, Repository }) => {
     inputRef.current.value = "";
     editor.setData("");
     UpdatePost(post);
+    console.log(posts);
   };
 
   return (
@@ -182,8 +186,13 @@ const Diary = ({ naver, authService, Repository }) => {
           onChange={handleTitle}
           ref={inputRef}
         />
-        <Search naver={naver} ref={searchRef} />
-        <StarScore onChange={handleScore} userId={userId} postId={postId} />
+        <Search naver={naver} onChange={handlePlace} />
+        <StarScore
+          onChange={handleScore}
+          userId={userId}
+          postId={postId}
+          score={score}
+        />
         <form className={styles.Editor_wrap}>
           <CKEditor
             editor={ClassicEditor}
@@ -246,11 +255,12 @@ const Diary = ({ naver, authService, Repository }) => {
           </button>
         </form>
       </div>
-      <Board
+      <BoardList
         userId={userId}
         deletePost={DeletePost}
         updatePost={UpdatePost}
         posts={posts}
+        Repository={Repository}
       />
     </div>
   );
