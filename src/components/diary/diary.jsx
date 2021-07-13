@@ -64,7 +64,8 @@ const Diary = ({ naver, authService, Repository }) => {
   const [content, setContent] = useState(<div> </div>);
   const [pos, setPos] = useState("");
   const [date, setDate] = useState("");
-  const [postId, setPostId] = useState([]);
+  const [score, setScore] = useState(0);
+  const [postId, setPostId] = useState("");
 
   const inputRef = useRef();
   const searchRef = useRef();
@@ -141,6 +142,11 @@ const Diary = ({ naver, authService, Repository }) => {
     handleDate();
   });
 
+  const handleScore = (score) => {
+    setScore(score);
+    console.log(`score:`, score);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const post = {
@@ -149,13 +155,15 @@ const Diary = ({ naver, authService, Repository }) => {
       pos,
       content,
       date,
+      score,
     };
-    const postid = [...postId];
-    postid.push(post.id);
+    const postid = post.id;
     setPostId(postid);
     setTitle("");
     setContent(<div></div>);
     setPos("");
+    setPostId("");
+    setScore(0);
     inputRef.current.value = "";
     editor.setData("");
     UpdatePost(post);
@@ -175,7 +183,7 @@ const Diary = ({ naver, authService, Repository }) => {
           ref={inputRef}
         />
         <Search naver={naver} ref={searchRef} />
-        <StarScore Repository={Repository} userId={userId} postId={postId} />
+        <StarScore onChange={handleScore} userId={userId} postId={postId} />
         <form className={styles.Editor_wrap}>
           <CKEditor
             editor={ClassicEditor}

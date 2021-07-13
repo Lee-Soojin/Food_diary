@@ -14,12 +14,14 @@ const Post = ({ updatePost, deletePost, post }) => {
   const [title, setTitle] = useState("");
   const [pos, setPos] = useState("");
   const [content, setContent] = useState(<div></div>);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     setDate(post.date);
     setTitle(post.title);
     setPos(post.pos);
     setContent(post.content);
+    setScore(post.score);
   });
 
   return (
@@ -35,6 +37,7 @@ const Post = ({ updatePost, deletePost, post }) => {
           <p className={styles.date}>{date}</p>
           <p className={styles.title}>{title}</p>
           <p className={styles.pos}>{pos}</p>
+          <p className={styles.score}> ⭐ {score} </p>
         </div>
         <div
           dangerouslySetInnerHTML={{ __html: content }}
