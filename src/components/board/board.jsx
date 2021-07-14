@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Post from "../post/post";
 import styles from "./board.module.css";
+import { trackPromise } from "react-promise-tracker";
 
 const Board = ({ Repository, authService }) => {
   const history = useHistory();
@@ -19,10 +20,26 @@ const Board = ({ Repository, authService }) => {
     });
   });
 
-  useEffect(() => {
-    const post = userId && Repository.getPost(userId);
-    setPosts(Repository.board);
-  });
+  // useEffect(() => {
+  //   const post = userId && Repository.getPost(userId);
+  //   console.log(post);
+
+  //   const board = async () => {
+  //     console.log(await Repository.getPost(userId));
+  //     return await Repository.board;
+  //   };
+
+  //   console.log(board);
+  // });
+
+  trackPromise(
+    useEffect(async () => {
+      const response = await Repository.getPost(userId);
+      console.log(response);
+      setPosts(Repository.board);
+      console.log(posts);
+    }, [Repository.board])
+  );
 
   const DeletePost = (post) => {
     setPosts((posts) => {

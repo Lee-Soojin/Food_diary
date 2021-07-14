@@ -7,6 +7,7 @@ import MyCustomUploadAdapterPlugin from "./components/custom_img_upload/custom_i
 import Naver from "./service/naver";
 import AuthService from "./service/auth_service";
 import Repository from "./service/repository";
+import LoadingIndicator from "./components/loading_indicator/loading_indicator";
 
 const imageUploader = new ImageUploader();
 const repository = new Repository();
@@ -22,6 +23,7 @@ ReactDOM.render(
       authService={authService}
       Repository={repository}
     />
+    <LoadingIndicator />
   </React.StrictMode>,
   document.getElementById("root")
 );

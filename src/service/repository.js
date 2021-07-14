@@ -30,6 +30,8 @@ class Repository {
         if (snapshot.exists()) {
           this.board = snapshot.val();
           console.log(this.board);
+          const res = this.board;
+          return res;
         } else {
           console.log("no data avaliable");
         }
