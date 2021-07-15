@@ -20,7 +20,18 @@ const Board = ({ Repository, authService }) => {
     });
   });
 
-  // useEffect(() => {
+  useEffect(() => {
+    const post = userId && Repository.getPost(userId);
+    console.log(post);
+    // const board = async () => {
+    //   console.log(await Repository.getPost(userId));
+    //   return await Repository.board;
+    // };
+    // setPosts(post);
+    // console.log(posts);
+  }, [Repository]);
+
+  // const getData = () => {
   //   const post = userId && Repository.getPost(userId);
   //   console.log(post);
 
@@ -28,18 +39,16 @@ const Board = ({ Repository, authService }) => {
   //     console.log(await Repository.getPost(userId));
   //     return await Repository.board;
   //   };
-
   //   console.log(board);
-  // });
+  // };
 
-  trackPromise(
-    useEffect(async () => {
-      const response = await Repository.getPost(userId);
-      console.log(response);
-      setPosts(Repository.board);
-      console.log(posts);
-    }, [Repository.board])
-  );
+  // useEffect(() => {
+  //   trackPromise(async () => {
+  //     const getpost = Repository.getPost(userId);
+  //     console.log(await getpost);
+  //     return getpost;
+  //   });
+  // }, []);
 
   const DeletePost = (post) => {
     setPosts((posts) => {
@@ -53,9 +62,10 @@ const Board = ({ Repository, authService }) => {
   return (
     <>
       <div className={styles.Board_container}>
-        {Object.keys(posts).map((key) => (
-          <Post key={key} post={posts[key]} deletePost={DeletePost} />
-        ))}
+        {posts &&
+          Object.keys(posts).map((key) => (
+            <Post key={key} post={posts[key]} deletePost={DeletePost} />
+          ))}
       </div>
     </>
   );

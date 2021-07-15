@@ -20,18 +20,35 @@ class Repository {
     firebaseDatabase.ref(`${userId}/board/${post.id}`).remove();
   }
 
+  // getPost(userId) {
+  //   const dbRef = firebaseDatabase.ref();
+  //   dbRef
+  //     .child(userId)
+  //     .child("board")
+  //     .get()
+  //     .then((snapshot) => {
+  //       if (snapshot.exists()) {
+  //         this.board = snapshot.val();
+  //         console.log(this.board);
+  //         const res = this.board;
+  //         return res;
+  //       } else {
+  //         console.log("no data avaliable");
+  //       }
+  //     });
+  // }
+
   getPost(userId) {
     const dbRef = firebaseDatabase.ref();
     dbRef
       .child(userId)
       .child("board")
-      .get()
+      .once("value")
       .then((snapshot) => {
         if (snapshot.exists()) {
           this.board = snapshot.val();
-          console.log(this.board);
-          const res = this.board;
-          return res;
+          console.log("board:", this.board);
+          return this.board;
         } else {
           console.log("no data avaliable");
         }
