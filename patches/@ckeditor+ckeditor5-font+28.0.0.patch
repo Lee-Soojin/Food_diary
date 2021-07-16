@@ -1,0 +1,14 @@
+diff --git a/node_modules/@ckeditor/ckeditor5-font/src/fontfamily/fontfamilyediting.js b/node_modules/@ckeditor/ckeditor5-font/src/fontfamily/fontfamilyediting.js
+index 3e5f0e5..d3a0015 100644
+--- a/node_modules/@ckeditor/ckeditor5-font/src/fontfamily/fontfamilyediting.js
++++ b/node_modules/@ckeditor/ckeditor5-font/src/fontfamily/fontfamilyediting.js
+@@ -48,7 +48,8 @@ export default class FontFamilyEditing extends Plugin {
+ 				'Tahoma, Geneva, sans-serif',
+ 				'Times New Roman, Times, serif',
+ 				'Trebuchet MS, Helvetica, sans-serif',
+-				'Verdana, Geneva, sans-serif'
++				'Verdana, Geneva, sans-serif','맑은 고딕',
++				'Cafe24Ssukssuk', 'Cafe24SsurroundAir', 'HangeulNuriB', 'HangeulNuriR', 'IBMPlexSansKR-Light', 'IBMPlexSansKR-Medium', 'Jua-Regular', 'Pacifico-Regular'
+ 			],
+ 			supportAllValues: false
+ 		} );

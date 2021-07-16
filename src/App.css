@@ -6,6 +6,10 @@
   min-height: 500px;
   min-width: 770px;
 }
+.ck.ck-reset.ck-dropdown__panel.ck-dropdown__panel_se.ck-dropdown__panel-visible {
+  height: 20rem;
+  overflow-y: scroll;
+}
 
 @font-face {
   font-family: "Cafe24SsurroundAir";
