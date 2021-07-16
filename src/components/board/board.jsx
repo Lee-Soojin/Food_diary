@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Post from "../post/post";
 import styles from "./board.module.css";
-import { trackPromise } from "react-promise-tracker";
+import Header from "../header/header";
 
 const Board = ({ Repository, authService }) => {
   const history = useHistory();
@@ -42,7 +42,9 @@ const Board = ({ Repository, authService }) => {
 
   return (
     <>
+      <Header authService={authService} />
       <div className={styles.Board_container}>
+        <h2 className={styles.title}>Board</h2>
         {posts &&
           Object.keys(posts).map((key) => (
             <Post key={key} post={posts[key]} deletePost={DeletePost} />

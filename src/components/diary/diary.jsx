@@ -219,17 +219,6 @@ const Diary = ({ naver, authService, Repository }) => {
                 "undo",
                 "redo",
               ],
-              fontfamily: {
-                options: [
-                  "나눔고딕",
-                  "나눔명조",
-                  "Cafe24SsurroundAir",
-                  "MaruBuri-Regular",
-                  "InfinitySans-RegularA1",
-                  "IBMPlexSansKR-Regular",
-                  "RixYeoljeongdo_Regular",
-                ],
-              },
               image: {
                 toolbar: [
                   "imageStyle:full",
@@ -238,6 +227,29 @@ const Diary = ({ naver, authService, Repository }) => {
                   "imageTextAlternative",
                 ],
               },
+              fontFamily: {
+                options: [
+                  "default",
+                  "Arial, Helvetica, sans-serif",
+                  "Courier New, Courier, monospace",
+                  "Georgia, serif",
+                  "Lucida Sans Unicode, Lucida Grande, sans-serif",
+                  "Tahoma, Geneva, sans-serif",
+                  "Times New Roman, Times, serif",
+                  "Trebuchet MS, Helvetica, sans-serif",
+                  "Verdana, Geneva, sans-serif",
+                  "맑은 고딕",
+                  "카페24 고운밤 보통, Cafe24Oneprettynight",
+                  "카페24 써라운드 에어 가늘게, Cafe24SsurroundAir",
+                  "카페24 쑥쑥 보통, Cafe24Ssukssuk",
+                  "한글누리, HangeulNuri-Bold",
+                  "IBM Plex Sans KR Light 가늘게, IBMPlexSansKR-Light",
+                  "IBM Plex Sans KR Medium 중간, IBMPlexSansKR-Medium",
+                  "쿠키런, CookieRun-Regular",
+                ],
+                supportAllValues: true,
+              },
+              language: "ko",
             }}
             data="<p></p>"
             name="CKeditor"
