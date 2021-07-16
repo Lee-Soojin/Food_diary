@@ -31,9 +31,7 @@ const Post = ({ updatePost, deletePost, post }) => {
         <button className={styles.BtnDelete} onClick={onClick}>
           삭제
         </button>
-        <button className={styles.BtnRewrite} onClick={handleRewrite}>
-          수정
-        </button>
+
         <div className={styles.description}>
           <p className={styles.date}>{date}</p>
           <p className={styles.title}>{title}</p>
