@@ -1,3 +1,118 @@
+diff --git a/node_modules/@ckeditor/ckeditor5-font/src/fontcolor/fontcolorediting.js b/node_modules/@ckeditor/ckeditor5-font/src/fontcolor/fontcolorediting.js
+index e9e1f8b..5a2b531 100644
+--- a/node_modules/@ckeditor/ckeditor5-font/src/fontcolor/fontcolorediting.js
++++ b/node_modules/@ckeditor/ckeditor5-font/src/fontcolor/fontcolorediting.js
+@@ -97,7 +97,109 @@ export default class FontColorEditing extends Plugin {
+ 				{
+ 					color: 'hsl(270, 75%, 60%)',
+ 					label: 'Purple'
+-				}
++				},
++				{
++					color: 'hsl(345, 100%, 50%)',
++					label: 'Hot Pink'
++				},
++				{
++					color: 'hsl(0, 85%, 76%)',
++					label: 'Pink'
++				},
++				{
++					color: 'hsl(13, 99%, 57%)',
++					label: 'Grape Fruit'
++				},
++				{
++					color: 'hsl(22, 99%, 71%)',
++					label: 'Orange Pink'
++				},
++				{
++					color: 'hsl(48, 99%, 57%)',
++					label: 'Yellow 2'
++				},
++				{
++					color: 'hsl(48, 99%, 71%)',
++					label: 'Light Yellow'
++				},
++				{
++					color: 'hsl(61, 99%, 71%)',
++					label: 'Lemon'
++				},
++				
++				{
++					color: 'hsl(81, 82%, 68%)',
++					label: 'Melon Green'
++				},
++				{
++					color: 'hsl(96, 98%, 24%)',
++					label: 'Mute Green'
++				},
++				{
++					color: 'hsl(164, 98%, 24%)',
++					label: 'Blue Green'
++				},
++				{
++					color: 'hsl(174, 98%, 24%)',
++					label: 'Greenery Blue'
++				},
++				
++				{
++					color: 'hsl(186, 98%, 24%)',
++					label: 'Sea Blue'
++				},
++				{
++					color: 'hsl(195, 98%, 24%)',
++					label: 'Dark Blue'
++				},
++				{
++					color: 'hsl(209, 100%, 51%)',
++					label: 'Blue'
++				},
++				{
++					color: 'hsl(203, 100%, 75%)',
++					label: 'Sky Blue'
++				},
++
++				{
++					color: 'hsl(228, 100%, 75%)',
++					label: 'Purple Blue'
++				},
++				
++				{
++					color: 'hsl(258, 100%, 75%)',
++					label: 'Lavendar'
++				},
++				{
++					color: 'hsl(271, 100%, 75%)',
++					label: 'Lavendar 2'
++				},
++				{
++					color: 'hsl(316, 100%, 75%)',
++					label: 'Pink 2'
++				},
++				{
++					color: 'hsl(332, 100%, 75%)',
++					label: 'Love Pink'
++				},
++				{
++					color: 'hsl(345, 14%, 14%)',
++					label: 'Dark Brown'
++				},
++				{
++					color: 'hsl(34, 88%, 25%)',
++					label: 'Brown'
++				},
++				{
++					color: 'hsl(34, 0%, 25%)',
++					label: 'Dark Gray'
++				},
++				{
++					color: 'hsl(38, 92%, 92%)',
++					label: 'Beige'
++				},
++
++
+ 			],
+ 			columns: 5
+ 		} );
 diff --git a/node_modules/@ckeditor/ckeditor5-font/src/fontfamily/fontfamilyediting.js b/node_modules/@ckeditor/ckeditor5-font/src/fontfamily/fontfamilyediting.js
 index 3e5f0e5..d3a0015 100644
 --- a/node_modules/@ckeditor/ckeditor5-font/src/fontfamily/fontfamilyediting.js
