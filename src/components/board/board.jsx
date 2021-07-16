@@ -21,34 +21,15 @@ const Board = ({ Repository, authService }) => {
   });
 
   useEffect(() => {
-    const post = userId && Repository.getPost(userId);
-    console.log(post);
-    // const board = async () => {
-    //   console.log(await Repository.getPost(userId));
-    //   return await Repository.board;
-    // };
-    // setPosts(post);
-    // console.log(posts);
-  }, [Repository]);
+    if (!userId) {
+      return;
+    }
+    const stopSync = Repository.syncPosts(userId, (posts) => {
+      setPosts(posts);
+    });
 
-  // const getData = () => {
-  //   const post = userId && Repository.getPost(userId);
-  //   console.log(post);
-
-  //   const board = async () => {
-  //     console.log(await Repository.getPost(userId));
-  //     return await Repository.board;
-  //   };
-  //   console.log(board);
-  // };
-
-  // useEffect(() => {
-  //   trackPromise(async () => {
-  //     const getpost = Repository.getPost(userId);
-  //     console.log(await getpost);
-  //     return getpost;
-  //   });
-  // }, []);
+    return () => stopSync();
+  }, [userId, Repository]);
 
   const DeletePost = (post) => {
     setPosts((posts) => {
