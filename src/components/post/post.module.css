@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "HangeulNuri_regular";
+  src: url(../../fonts/HangeulNuriR.ttf);
+}
+
 div.container > img {
   display: flex;
   max-width: 10rem;
@@ -16,13 +21,14 @@ figure > img {
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 55rem;
-  height: 40rem;
+  width: 60rem;
+  height: 30rem;
   align-items: center;
   justify-content: center;
   margin: 1rem auto;
   border-radius: 0.5rem;
-  border: 1px solid gray;
+  box-shadow: 1px 1px 10px black;
+  background-color: rgba(255, 255, 255, 0.863);
 }
 
 .description {
@@ -33,16 +39,33 @@ figure > img {
   width: 15rem;
   height: 100%;
   border-right: 1px solid gray;
+  cursor: default;
 }
 
 .date {
   display: flex;
+  font-family: "HangeulNuri_regular";
+}
+
+.title {
+  display: flex;
+  font-family: "HangeulNuri_regular";
+}
+
+.pos {
+  display: flex;
+  font-family: "HangeulNuri_regular";
+}
+
+.score {
+  display: flex;
+  font-family: "HangeulNuri_regular";
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  width: 50rem;
+  width: 45rem;
   height: 100%;
   align-items: center;
   justify-content: flex-start;
@@ -54,14 +77,20 @@ figure > img {
   display: flex;
   position: absolute;
   top: 1rem;
-  right: 1.5rem;
-  width: 2.5rem;
-  height: 1.5rem;
-  font-size: 0.7rem;
+  right: 1.2rem;
+  width: 3rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  color: black;
   background-color: transparent;
   border: none;
-  border: 1px solid pink;
   border-radius: 4px;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+.BtnDelete:hover {
+  transform: scale(1.1);
+  color: red;
 }

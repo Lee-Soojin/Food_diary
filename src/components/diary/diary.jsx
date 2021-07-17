@@ -265,13 +265,7 @@ const Diary = ({ naver, authService, Repository }) => {
           </button>
         </form>
       </div>
-      <BoardList
-        userId={userId}
-        deletePost={DeletePost}
-        updatePost={UpdatePost}
-        posts={posts}
-        Repository={Repository}
-      />
+    
     </div>
   );
 };

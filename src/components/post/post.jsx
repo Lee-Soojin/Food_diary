@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./post.module.css";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const Post = ({ updatePost, deletePost, post }) => {
   const onClick = (e) => {
@@ -29,7 +30,7 @@ const Post = ({ updatePost, deletePost, post }) => {
     <>
       <div className={styles.diary_container}>
         <button className={styles.BtnDelete} onClick={onClick}>
-          삭제
+          <AiOutlineDelete className={styles.Delete_icon} />
         </button>
 
         <div className={styles.description}>

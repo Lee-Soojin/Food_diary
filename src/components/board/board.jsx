@@ -9,8 +9,6 @@ const Board = ({ Repository, authService }) => {
   const historyState = history.location.state;
   const [userId, setUserId] = useState(historyState && historyState.id);
   const [posts, setPosts] = useState({});
-  const [click, setClick] = useState(0);
-  const [number, setNumber] = useState(0);
   const postRef = useRef();
 
   useEffect(() => {
@@ -43,29 +41,11 @@ const Board = ({ Repository, authService }) => {
     Repository.removePost(userId, post);
   };
 
-  const handleLeft = (e) => {
-    e.preventDefault();
-    setClick(click + 1);
-    postRef.current.scrollTo(-100 * click, 0);
-  };
-
-  const handleRight = (e) => {
-    e.preventDefault();
-    setNumber(number + 1);
-    postRef.current.scrollTo(100 * number, 0);
-  };
-
   return (
-    <>
-      <Header authService={authService} />
+    <div className={styles.page_board}>
+      <Header authService={authService} className={styles.header} />
       <div className={styles.Board_container}>
-        <h2 className={styles.title}>Board</h2>
-        <button className={styles.BtnLeft} onClick={handleLeft}>
-          ◀
-        </button>
-        <button className={styles.BtnRight} onClick={handleRight}>
-          ▶
-        </button>
+        <h2 className={styles.title}>Diary</h2>
         <div className={styles.post_container} ref={postRef}>
           {posts &&
             Object.keys(posts).map((key) => (
@@ -73,7 +53,7 @@ const Board = ({ Repository, authService }) => {
             ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
