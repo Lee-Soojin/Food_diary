@@ -176,13 +176,16 @@ const Diary = ({ naver, authService, Repository }) => {
     inputRef.current.value = "";
     editor.setData("");
     UpdatePost(post);
+    history.push("/board");
   };
 
   return (
     <div className={styles.Diary}>
       <Header authService={authService} Logout={onLogout} />
       <div className={styles.Editor}>
-        <h2 className={styles.greeting}>오늘의 하루를 기록하세요</h2>
+        <div className={styles.greeting_container}>
+          <h2 className={styles.greeting}>오늘의 맛을 기록해보세요</h2>
+        </div>
         <h4 className={styles.Date}>{date}</h4>
         <input
           type="text"
@@ -198,6 +201,9 @@ const Diary = ({ naver, authService, Repository }) => {
           postId={postId}
           score={score}
         />
+        <p className={styles.notice}>
+          ⚠ 사진 첨부시 허용 크기: 850 x 850 이하 가능
+        </p>
         <form className={styles.Editor_wrap}>
           <CKEditor
             editor={ClassicEditor}

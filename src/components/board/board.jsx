@@ -45,7 +45,7 @@ const Board = ({ Repository, authService }) => {
     <div className={styles.page_board}>
       <Header authService={authService} className={styles.header} />
       <div className={styles.Board_container}>
-        <h2 className={styles.title}>Diary</h2>
+        {/* <h2 className={styles.title}>Diary</h2> */}
         <div className={styles.post_container} ref={postRef}>
           {posts &&
             Object.keys(posts).map((key) => (

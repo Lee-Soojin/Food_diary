@@ -1,5 +1,11 @@
 * {
   box-sizing: border-box;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 :root {
@@ -27,6 +33,7 @@
   flex-direction: row;
   background-color: var(--header-background-color);
   z-index: 1001;
+  vertical-align: middle;
 }
 
 .logoImg {

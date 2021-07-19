@@ -11,6 +11,11 @@
   src: url(../../fonts/Jua-Regular.ttf);
 }
 
+@font-face {
+  font-family: "hangeulnuriR";
+  src: url(../../fonts/HangeulNuriR.ttf);
+}
+
 .Diary {
   display: flex;
   flex-direction: column;
@@ -33,20 +38,30 @@
   align-items: center;
 }
 
+.greeting_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
 .greeting {
   display: flex;
-  width: 21.5ch;
+  width: 18.5ch;
   height: 2rem;
-  margin: 0;
-  margin: auto;
-  margin: 1rem 0;
-  animation: typing 2s steps(13), blink 1s step-end infinite alternate;
+  animation: typing 2s steps(12), blink 1s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
   font-size: 1.5rem;
+  font-family: "hangeulnuriR";
   align-items: center;
-  align-items: center;
+}
+
+.notice {
+  display: flex;
+  font-size: 0.7rem;
+  font-family: "jua_regular";
 }
 
 .Date {

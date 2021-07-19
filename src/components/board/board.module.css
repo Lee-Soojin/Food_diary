@@ -18,7 +18,6 @@
 
 .Board_container {
   position: absolute;
-  top: 5.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,14 +49,14 @@
   background-color: transparent;
 }
 
-.title {
+/* .title {
   position: absolute;
   top: 0;
   display: flex;
   font-size: 3rem;
   font-family: "Pacifico_regular";
   margin: 0;
-}
+} */
 
 .BtnLeft,
 .BtnRight {

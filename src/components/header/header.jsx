@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import styles from "./header.module.css";
 import logoImg from "../../image/home_logo.png";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./header.css";
 
 const Header = ({ authService }) => {
@@ -36,22 +36,21 @@ const Header = ({ authService }) => {
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
-        <img src={logoImg} alt="Logo" className={styles.logoImg} />
+        <Link to="/">
+          <img src={logoImg} alt="Logo" className={styles.logoImg} />
+        </Link>
       </div>
       <ul className={styles.menu}>
-        <li className={styles.category} key="about">
-          About
-        </li>
-        <li className={styles.category} key="home">
-          Home
+        <li className={styles.category} key="write">
+          <Link to="/diary">Write Diary</Link>
         </li>
         <li className={styles.category} key="mypage">
-          My Page
+          <Link to="/board">My Diary</Link>
         </li>
-        <li className={styles.category} key="board">
-          Board
+        <li className={styles.category} key="home">
+          <Link to="/">Home</Link>
         </li>
-        <li className={styles.category} key="menu2">
+        <li className={styles.category} key="menu">
           Menu
         </li>
       </ul>
