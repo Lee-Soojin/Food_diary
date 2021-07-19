@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./login.module.css";
+import imgLogin from "../../image/bacon_login.png";
 
 const Login = ({ authService }) => {
   const [email, setEmail] = useState("");
@@ -48,8 +49,9 @@ const Login = ({ authService }) => {
     }
   };
   return (
-    <section>
-      <h1 className={styles.title}>Login</h1>
+    <section className={styles.Login}>
+      {/* <h1 className={styles.title}>Login</h1> */}
+      <img src={imgLogin} alt="imgLogin" className={styles.login_logo} />
       <div className={styles.email_login}>
         <h3>회원 로그인</h3>
         <form
