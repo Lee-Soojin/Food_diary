@@ -1,7 +1,23 @@
+@font-face {
+  font-family: "jua_regular";
+  src: url(../../fonts/Jua-Regular.ttf);
+}
+
 .Star_container {
   display: flex;
   flex-direction: row;
   margin: 0.5rem 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  font-size: 0.9rem;
+  margin: 0;
+  margin-right: 1rem;
+  padding-top: 0.3rem;
+  font-family: "jua_regular";
 }
 
 .star {
@@ -31,4 +47,13 @@
 .score_number {
   display: flex;
   font-size: 0.7rem;
+  margin-left: 0.3rem;
+  font-family: "jua_regular";
+  border-radius: 50%;
+  background-color: green;
+  width: 1rem;
+  height: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }

@@ -26,6 +26,7 @@ const StarScore = ({ onChange, score }) => {
   return (
     <>
       <div className={styles.Star_container}>
+        <p className={styles.title}> 별점: </p>
         {array.map((num) =>
           star[num] ? (
             <BsStarFill
