@@ -28,7 +28,7 @@
   width: 100%;
   background-image: url(../../image/hotdog_repetitive.jpg);
   overflow-y: scroll;
-  padding-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .post_container {
@@ -46,13 +46,12 @@
 }
 
 .header {
-  display: flex;
+  display: none;
   background-color: transparent;
 }
 
 .title {
   position: absolute;
-
   top: 0;
   display: flex;
   font-size: 3rem;

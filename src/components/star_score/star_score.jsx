@@ -18,7 +18,7 @@ const StarScore = ({ onChange, score }) => {
     }
     setStar(starState);
     setNumber(index + 1);
-    onChange(number);
+    onChange(index + 1);
   };
 
   const array = [0, 1, 2, 3, 4];

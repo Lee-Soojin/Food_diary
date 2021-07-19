@@ -32,7 +32,6 @@ const Post = ({ updatePost, deletePost, post }) => {
         <button className={styles.BtnDelete} onClick={onClick}>
           <AiOutlineDelete className={styles.Delete_icon} />
         </button>
-
         <div className={styles.description}>
           <p className={styles.date}>{date}</p>
           <p className={styles.title}>{title}</p>

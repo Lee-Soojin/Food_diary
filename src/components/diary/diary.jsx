@@ -145,9 +145,17 @@ const Diary = ({ naver, authService, Repository }) => {
     setScore(score);
   };
 
+  useEffect(() => {
+    console.log("score:", score);
+  }, [handleScore]);
+
   const handlePlace = (place) => {
     setPos(place);
   };
+
+  useEffect(() => {
+    console.log("place: ", pos);
+  }, [handlePlace]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -165,7 +173,6 @@ const Diary = ({ naver, authService, Repository }) => {
     setContent(<div></div>);
     setPos("");
     setPostId("");
-    setScore(0);
     inputRef.current.value = "";
     editor.setData("");
     UpdatePost(post);
@@ -265,7 +272,6 @@ const Diary = ({ naver, authService, Repository }) => {
           </button>
         </form>
       </div>
-    
     </div>
   );
 };
