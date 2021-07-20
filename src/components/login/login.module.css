@@ -96,6 +96,7 @@
   background-color: rgb(255, 241, 196);
   border: none;
   box-shadow: 5px 2px 2px black;
+  outline: none;
 }
 
 .input_email::placeholder,
@@ -131,6 +132,12 @@
   border-radius: 0.4rem;
   background-color: #dbc172;
   color: white;
+  cursor: pointer;
+}
+
+.BtnGoogle:hover,
+.BtnFacebook:hover {
+  transform: scale(1.1);
 }
 
 .BtnFacebook > p {
