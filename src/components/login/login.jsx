@@ -51,48 +51,52 @@ const Login = ({ authService }) => {
   return (
     <section className={styles.Login}>
       {/* <h1 className={styles.title}>Login</h1> */}
-      <img src={imgLogin} alt="imgLogin" className={styles.login_logo} />
-      <div className={styles.email_login}>
-        <h3>회원 로그인</h3>
-        <form
-          className={styles.login_form}
-          onSubmit={MemberLogin}
-          onKeyPress={handleKeyPress}
-        >
-          <div className={styles.email}>
-            <input
-              className={styles.input_email}
-              type="email"
-              placeholder="Email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-            />
+      <section className={styles.Login_wrap}>
+        <img src={imgLogin} alt="imgLogin" className={styles.login_logo} />
+        <section className={styles.Login_container}>
+          <div className={styles.email_login}>
+            <h3 className={styles.user_login_title}>회원 로그인</h3>
+            <form
+              className={styles.login_form}
+              onSubmit={MemberLogin}
+              onKeyPress={handleKeyPress}
+            >
+              <div className={styles.email}>
+                <input
+                  className={styles.input_email}
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  value={email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className={styles.password}>
+                <input
+                  className={styles.input_password}
+                  type="password"
+                  placeholder="비밀번호"
+                  name="password"
+                  value={password}
+                  onChange={handleChange}
+                />
+              </div>
+            </form>
           </div>
-          <div className={styles.password}>
-            <input
-              className={styles.input_password}
-              type="password"
-              placeholder="비밀번호"
-              name="password"
-              value={password}
-              onChange={handleChange}
-            />
-          </div>
-        </form>
-      </div>
-      <ul>
-        <li className={styles.login_google} key="google_login">
-          <button className={styles.BtnGoogle} onClick={onLogin}>
-            Google
-          </button>
-        </li>
-        <li className={styles.login_facebook} key="facebook_login">
-          <button className={styles.BtnFacebook} onClick={onLogin}>
-            Facebook
-          </button>
-        </li>
-      </ul>
+          <ul className={styles.social_login}>
+            <li className={styles.login_google} key="google_login">
+              <button className={styles.BtnGoogle} onClick={onLogin}>
+                Google
+              </button>
+            </li>
+            <li className={styles.login_facebook} key="facebook_login">
+              <button className={styles.BtnFacebook} onClick={onLogin}>
+                Facebook
+              </button>
+            </li>
+          </ul>
+        </section>
+      </section>
     </section>
   );
 };

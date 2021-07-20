@@ -2,19 +2,114 @@
   box-sizing: border-box;
 }
 
-.Login {
-  display: flex;
-  width: 100%;
-  height: 100vh;
+@font-face {
+  font-family: "IBM_R";
+  src: url(../../fonts/IBMPlexSansKR-Medium.ttf);
 }
 
-.title {
+.Login {
   display: flex;
-  font-size: 8rem;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.Login_wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 70%;
+  border: 1px solid gray;
 }
 
 .login_logo {
   display: flex;
+  position: absolute;
+  top: 1rem;
   width: 20rem;
   height: 10rem;
+}
+
+.Login_container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 70%;
+  border: 1px solid gray;
+  align-items: center;
+  justify-content: center;
+}
+
+.email_login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_login_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+}
+
+.email,
+.password {
+  display: flex;
+  width: 100%;
+}
+
+.input_email,
+.input_password {
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  background-color: rgb(232, 240, 254);
+  border: none;
+}
+
+.input_email::placeholder,
+.input_password::placeholder {
+  padding-left: 1rem;
+  font-size: 0.8rem;
+}
+
+.social_login {
+  list-style: none;
+}
+
+.login_google,
+.login_facebook {
+  list-style: none;
+}
+
+.BtnGoogle,
+.BtnFacebook {
+  display: flex;
+  margin: 0.3rem 0;
+  width: 10rem;
+  align-items: center;
+  justify-content: center;
+  font-family: "IBM_R";
+  font-size: 1rem;
+  box-shadow: 5px 2px 2px black;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: rgba(224, 223, 223, 0.808);
 }
