@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./login.module.css";
 import imgLogin from "../../image/bacon_login.png";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
 
 const Login = ({ authService }) => {
   const [email, setEmail] = useState("");
@@ -84,14 +86,17 @@ const Login = ({ authService }) => {
             </form>
           </div>
           <ul className={styles.social_login}>
+            <p className={styles.social_login_title}> 소셜 로그인 </p>
             <li className={styles.login_google} key="google_login">
               <button className={styles.BtnGoogle} onClick={onLogin}>
-                Google
+                <FcGoogle className={styles.logo_google} />
+                <p>Google</p>
               </button>
             </li>
             <li className={styles.login_facebook} key="facebook_login">
               <button className={styles.BtnFacebook} onClick={onLogin}>
-                Facebook
+                <FaFacebook className={styles.logo_facebook} />
+                <p>Facebook</p>
               </button>
             </li>
           </ul>
