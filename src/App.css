@@ -106,3 +106,39 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@media screen and (max-width: 860px) {
+  .ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 400px;
+    min-width: 500px;
+    margin: 0 auto;
+  }
+
+  .ck.ck-editor {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 300px;
+    min-width: 400px;
+    margin: 0 auto;
+  }
+
+  .ck.ck-editor {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 13rem;
+    min-width: 21rem;
+    margin: 0 auto;
+  }
+
+  .ck.ck-editor {
+    max-width: 21rem;
+  }
+}

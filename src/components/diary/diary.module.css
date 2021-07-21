@@ -23,12 +23,6 @@
   height: 100%;
 }
 
-.Editor_wrap {
-  display: flex;
-  max-width: 50rem;
-  flex-direction: column;
-}
-
 .Editor {
   display: flex;
   position: relative;
@@ -110,5 +104,44 @@
 @keyframes blink {
   50% {
     border-color: transparent;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .Date {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .greeting {
+    font-size: 1.3rem;
+    margin: 0.3rem 0;
+  }
+
+  .title {
+    width: 20rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .greeting {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .greeting {
+    font-size: 1.1rem;
+  }
+
+  .Date {
+    font-size: 0.8rem;
+  }
+
+  .title {
+    width: 18rem;
+    margin: 0.5rem auto;
   }
 }

@@ -67,3 +67,21 @@
     background-color: var(--header-background-color);
   }
 }
+
+@media screen and (max-width: 412px) {
+  .BtnLogin.visible,
+  .BtnLogout.visible {
+    right: 6rem;
+  }
+
+  .menu.open {
+    right: 1rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .BtnLogin.visible,
+  .BtnLogout.visible {
+    right: 7rem;
+  }
+}

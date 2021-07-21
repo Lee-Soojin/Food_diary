@@ -19,3 +19,10 @@
   opacity: 0;
   display: none;
 }
+
+@media screen and (max-width: 412px) {
+  .Search_List {
+    width: 12rem;
+    margin-left: 1.8rem;
+  }
+}

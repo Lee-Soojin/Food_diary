@@ -77,3 +77,17 @@ ul {
   font-family: "jua_regular";
   margin: 0.7rem 0 0.7rem 3rem;
 }
+
+@media screen and (max-width: 412px) {
+  .search_phrase {
+    font-size: 0.8rem;
+  }
+
+  .search_input {
+    width: 12rem;
+  }
+
+  .Search_Result {
+    width: 18rem;
+  }
+}

@@ -57,3 +57,13 @@
   justify-content: center;
   color: white;
 }
+
+@media screen and (max-width: 412px) {
+  .Star_container {
+    margin: 0.2rem 0;
+  }
+
+  .title {
+    font-size: 0.8rem;
+  }
+}
