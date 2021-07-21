@@ -70,25 +70,6 @@ a {
 .category:hover {
   transform: scale(1.1);
 }
-/* 
-.BtnLogout,
-.BtnLogin {
-  position: absolute;
-  right: 2.2rem;
-  top: 2rem;
-  display: flex;
-  cursor: pointer;
-  font-family: "jua_regular";
-  color: green;
-  background-color: white;
-  border-radius: 1rem;
-  border: none;
-  width: 4rem;
-  height: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  transition: all 10ms ease;
-} */
 
 .BtnLogout.visible,
 .BtnLogin.visible {
@@ -118,4 +99,37 @@ a {
 .BtnLogout:hover,
 .BtnLogin:hover {
   transform: scale(1.1);
+}
+
+.BtnMenuBar {
+  display: none;
+}
+
+@media screen and (max-width: 860px) {
+  .header {
+    flex-direction: column;
+    border-bottom: 2px solid white;
+  }
+
+  .logoImg {
+    left: 42%;
+  }
+
+  .BtnMenuBar {
+    position: absolute;
+    right: 0.7rem;
+    top: 1.5rem;
+    display: flex;
+    width: 4rem;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+  }
+
+  .BtnMenuBar:hover {
+    transform: scale(1.1);
+    color: red;
+  }
 }

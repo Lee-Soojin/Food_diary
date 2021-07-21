@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Pacifico_Regular;
+  src: url(../../fonts/Pacifico-Regular.ttf);
+}
+
 .BtnLogout.visible,
 .BtnLogin.visible {
   display: flex;
@@ -26,4 +31,39 @@
 .BtnLogout:hover,
 .BtnLogin:hover {
   transform: scale(1.1);
+}
+
+.menu {
+  position: absolute;
+  right: 7rem;
+  display: flex;
+  flex-direction: row;
+  font-family: "Pacifico_Regular";
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.menu.closed {
+  display: none;
+}
+
+/* Responsive **/
+
+@media screen and (max-width: 860px) {
+  .BtnLogin.visible,
+  .BtnLogout.visible {
+    right: 6rem;
+  }
+
+  .menu.open {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    right: 0;
+    top: 4.4rem;
+    background-color: var(--header-background-color);
+  }
 }

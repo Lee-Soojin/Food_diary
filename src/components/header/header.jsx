@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import styles from "./header.module.css";
 import logoImg from "../../image/home_logo.png";
 import { Link, useHistory } from "react-router-dom";
+import { BiMenu } from "react-icons/bi";
 import "./header.css";
 
 const Header = ({ authService }) => {
@@ -9,6 +10,7 @@ const Header = ({ authService }) => {
   const historyState = history.location.state;
   const [userId, setUserId] = useState(historyState && historyState.id);
   const [isLogin, setisLogin] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -33,6 +35,11 @@ const Header = ({ authService }) => {
     });
   });
 
+  const handleMenuClick = (event) => {
+    event.preventDefault();
+    setOpen(!open);
+  };
+
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
@@ -40,7 +47,7 @@ const Header = ({ authService }) => {
           <img src={logoImg} alt="Logo" className={styles.logoImg} />
         </Link>
       </div>
-      <ul className={styles.menu}>
+      <ul className={`menu ${open ? "open" : "closed"}`}>
         <li className={styles.category} key="write">
           <Link to="/diary">Write Diary</Link>
         </li>
@@ -65,6 +72,9 @@ const Header = ({ authService }) => {
         onClick={onLogin}
       >
         로그인
+      </button>
+      <button className={styles.BtnMenuBar} onClick={handleMenuClick}>
+        <BiMenu />
       </button>
     </div>
   );

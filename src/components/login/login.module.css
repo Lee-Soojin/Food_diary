@@ -108,6 +108,8 @@
 .social_login {
   list-style: none;
   padding: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 .login_google,
@@ -170,9 +172,9 @@
 .signup {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 75%;
   align-items: center;
-  border-top: 1px solid gray;
+  border-top: 2px solid gray;
   margin: 0;
 }
 
@@ -181,6 +183,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "IBM_R";
 }
 
 .BtnSignup {
@@ -199,4 +202,79 @@
 .BtnSignup:hover {
   transform: scale(1.1);
   background-color: rgb(247, 218, 56);
+}
+
+@media screen and (max-width: 860px) {
+  .Login_wrap {
+    width: 70%;
+  }
+
+  .login_logo {
+    width: 18rem;
+    height: 9rem;
+  }
+
+  .login_form {
+    width: 15rem;
+    margin-top: 3.5rem;
+  }
+
+  .user_login_title {
+    display: none;
+  }
+
+  .input_email,
+  .input_password {
+    padding-left: 1.5rem;
+  }
+
+  .social_login_title {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .BtnGoogle,
+  .BtnFacebook {
+    width: 8rem;
+  }
+
+  .BtnFacebook > p,
+  .BtnGoogle > p {
+    right: 0.8rem;
+  }
+
+  .logo_facebook,
+  .logo_google {
+    left: 1rem;
+  }
+
+  .signup {
+    font-size: 0.8rem;
+  }
+
+  .BtnSignup {
+    margin: 0.4rem 0;
+    height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .login_logo {
+    width: 14rem;
+    height: 7rem;
+  }
+  .login_form {
+    width: 13rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .input_email,
+  .input_password {
+    width: 12rem;
+    height: 2rem;
+    margin: 0.7rem auto;
+  }
 }

@@ -43,17 +43,17 @@ const Home = ({ authService }) => {
             <ul className={styles.slides}>
               <li className={styles.about1}>
                 <label htmlFor="slide3" className={styles.left}></label>
-                <img src={bg1Img} alt="about1" />
+                <div className={styles.about1_img} />
                 <label htmlFor="slide2" className={styles.right}></label>
               </li>
               <li className={styles.about2}>
                 <label htmlFor="slide1" className={styles.left}></label>
-                <img src={bg2Img} alt="about2" />
+                <div className={styles.about2_img} />
                 <label htmlFor="slide3" className={styles.right}></label>
               </li>
               <li className={styles.about3}>
                 <label htmlFor="slide2" className={styles.left}></label>
-                <img src={bg3Img} alt="about3" />
+                <div className={styles.about3_img} />
                 <label htmlFor="slide1" className={styles.right}></label>
               </li>
             </ul>
