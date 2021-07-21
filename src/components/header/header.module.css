@@ -134,7 +134,7 @@ a {
   }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 416px) {
   .logoImg {
     left: 5%;
   }

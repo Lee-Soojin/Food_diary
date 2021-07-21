@@ -78,7 +78,7 @@ ul {
   margin: 0.7rem 0 0.7rem 3rem;
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 416px) {
   .search_phrase {
     font-size: 0.8rem;
   }

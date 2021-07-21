@@ -20,7 +20,7 @@
   display: none;
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 416px) {
   .Search_List {
     width: 12rem;
     margin-left: 1.8rem;

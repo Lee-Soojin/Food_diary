@@ -124,7 +124,7 @@
   }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 416px) {
   .greeting {
     width: 100%;
     align-items: center;

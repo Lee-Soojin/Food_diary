@@ -49,15 +49,6 @@
   background-color: transparent;
 }
 
-/* .title {
-  position: absolute;
-  top: 0;
-  display: flex;
-  font-size: 3rem;
-  font-family: "Pacifico_regular";
-  margin: 0;
-} */
-
 .BtnLeft,
 .BtnRight {
   display: flex;
@@ -72,4 +63,10 @@
 .BtnRight {
   top: 40%;
   right: 2rem;
+}
+
+@media screen and (max-width: 416px) {
+  .post_container {
+    width: 20rem;
+  }
 }

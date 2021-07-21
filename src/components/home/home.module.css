@@ -92,12 +92,10 @@
   display: flex;
   position: absolute;
   left: 2rem;
-  background-image: url("../../image/left.png");
+  background: url("../../image/left.png") center center / 100% no-repeat;
   z-index: 100;
   width: 5rem;
   height: 5rem;
-  align-items: center;
-  justify-content: center;
 }
 
 .right {
@@ -139,5 +137,35 @@
 
   .about3_img {
     background-image: url(../../image//home_bg3_860.jpg);
+  }
+}
+
+@media screen and (max-width: 416px) {
+  .slide_section {
+    top: 1.5rem;
+    width: 20rem;
+    height: 36rem;
+    margin: 0 auto;
+    left: 0;
+  }
+
+  .about1_img {
+    object-fit: cover;
+  }
+
+  .right {
+    width: 3rem;
+    object-fit: cover;
+    right: 1rem;
+  }
+
+  .left {
+    width: 3rem;
+    object-fit: cover;
+    left: 1rem;
+  }
+
+  .slides > li > label {
+    top: 45%;
   }
 }

@@ -119,7 +119,7 @@
   }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 416px) {
   .ck-editor__editable:not(.ck-editor__nested-editable) {
     min-height: 300px;
     min-width: 400px;

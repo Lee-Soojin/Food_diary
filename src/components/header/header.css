@@ -68,14 +68,10 @@
   }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 416px) {
   .BtnLogin.visible,
   .BtnLogout.visible {
     right: 6rem;
-  }
-
-  .menu.open {
-    right: 1rem;
   }
 }
 
