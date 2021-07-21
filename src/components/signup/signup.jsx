@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styles from "./signup.module.css";
 import Img1 from "../../image/fruit_dish_shadow.png";
 
@@ -43,7 +43,7 @@ const SignUp = ({ authService }) => {
       <div className={styles.signup_container}>
         <section className={styles.Image}></section>
         <section className={styles.signup}>
-          <h1 className={styles.title}>회원가입</h1>
+          <h1 className={styles.title}>Sign Up</h1>
           <form className={styles.singup_form} onSubmit={handleSubmit}>
             <div className={styles.email}>
               <p className={styles.text_email}>Email</p>
@@ -97,6 +97,12 @@ const SignUp = ({ authService }) => {
           >
             Sign Up !
           </button>
+          <p className={styles.login}>
+            이미 회원이라면 ▶
+            <Link to="/login" className={styles.login_link}>
+              로그인
+            </Link>
+          </p>
         </section>
       </div>
     </div>

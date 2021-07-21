@@ -33,7 +33,7 @@
 .login_logo {
   display: flex;
   position: absolute;
-  top: 0rem;
+  top: -4rem;
   width: 20rem;
   height: 10rem;
 }
@@ -165,4 +165,38 @@
 .logo_google {
   position: absolute;
   left: 1.5rem;
+}
+
+.signup {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  border-top: 1px solid gray;
+  margin: 0;
+}
+
+.signup_text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BtnSignup {
+  display: flex;
+  width: 7rem;
+  height: 1.8rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  border: none;
+  font-family: "IBM_R";
+  cursor: pointer;
+  transition: all ease 0.1s;
+}
+
+.BtnSignup:hover {
+  transform: scale(1.1);
+  background-color: rgb(247, 218, 56);
 }

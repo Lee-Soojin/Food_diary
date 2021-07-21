@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styles from "./login.module.css";
 import imgLogin from "../../image/bacon_login.png";
 import { FcGoogle } from "react-icons/fc";
@@ -100,6 +100,14 @@ const Login = ({ authService }) => {
               </button>
             </li>
           </ul>
+          <div className={styles.signup}>
+            <p className={styles.signup_text}>
+              아직 회원이 아닌가요?
+              <Link to="/signup" className={styles.signup_link}>
+                <button className={styles.BtnSignup}>회원가입</button>
+              </Link>
+            </p>
+          </div>
         </section>
       </section>
     </section>

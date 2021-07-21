@@ -17,7 +17,7 @@
   display: flex;
   height: 100%;
   width: 100%;
-  background-color: beige;
+  background-image: url(../../image/plate_bg_beige.jpg);
 }
 
 .signup_container {
@@ -40,7 +40,7 @@
   height: 100%;
   margin: auto;
   border-radius: 1rem;
-  background-image: url(../../image/sign_up_background.jpg);
+  background-image: url(../../image/sign_up_bg.jpg);
 }
 
 .img_food1 {
@@ -68,11 +68,11 @@
 
 .title {
   position: absolute;
-  top: 3rem;
+  top: 2.5rem;
   margin: 0 auto;
   display: flex;
-  font-family: "Jua_regular";
-  font-size: 2rem;
+  font-family: "Pacifico_regular";
+  font-size: 2.5rem;
 }
 
 .singup_form {
@@ -128,16 +128,41 @@
   position: absolute;
   border: none;
   background-color: white;
+  width: 8rem;
+  height: 2.3rem;
   bottom: 4rem;
-  padding: 0.3rem 1rem;
+  padding-bottom: 0.3rem;
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
   color: var(--text-color);
   font-family: "Pacifico_regular";
+  font-size: 1.1rem;
   cursor: pointer;
+  font-weight: 800;
+  line-height: 2.3rem;
 }
 
 .BtnSignUp:hover {
   transform: scale(1.1);
+}
+
+.login {
+  display: flex;
+  flex-direction: row;
+  font-family: "Jua_regular";
+  align-items: center;
+  justify-content: center;
+  line-height: 1rem;
+  margin-top: 1rem;
+}
+
+.login_link {
+  display: flex;
+  margin-left: 1rem;
+}
+
+.login_link:hover {
+  color: yellow;
+  transform: scale(1.15);
 }
