@@ -185,14 +185,13 @@
     flex-direction: column;
     width: 70%;
     height: 90%;
-
     margin: 0 auto;
     vertical-align: middle;
   }
 
   .signup {
     width: 100%;
-    height: 60%;
+    height: 75%;
     border-radius: 0 0 1rem 1rem;
   }
 
@@ -205,9 +204,15 @@
     background-position: center center;
     background-size: cover;
   }
+  .email,
+  .password,
+  .name,
+  .favoriteFood {
+    margin: 0.3rem;
+  }
 
   .title {
-    top: 0;
+    top: -2%;
     margin-top: 0.3rem;
     font-size: 2rem;
   }
@@ -223,6 +228,9 @@
 
   .BtnSignUp {
     bottom: 3.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    line-height: 1.5rem;
   }
 
   .login {
