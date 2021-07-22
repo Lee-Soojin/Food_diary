@@ -44,16 +44,16 @@
   cursor: pointer;
 }
 
-.menu.closed {
-  display: none;
-}
-
 /* Responsive **/
 
 @media screen and (max-width: 860px) {
   .BtnLogin.visible,
   .BtnLogout.visible {
     right: 6rem;
+  }
+
+  .menu.closed {
+    display: none;
   }
 
   .menu.open {
