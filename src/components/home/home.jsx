@@ -98,6 +98,9 @@ const Home = ({ authService }) => {
           </div>
         </div>
       </div>
+      <footer className={styles.footer}>
+        <p className={styles.footer_text}>made by Lee Soojin</p>
+      </footer>
     </div>
   );
 };
