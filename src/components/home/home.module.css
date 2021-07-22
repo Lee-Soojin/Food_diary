@@ -207,6 +207,28 @@
   font-family: "HangeulNuri";
 }
 
+.footer_text {
+  display: flex;
+  line-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+.footer_link {
+  color: black;
+  align-items: center;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  padding-top: 0.3rem;
+}
+
+.footer_link:hover {
+  transform: scale(1.2);
+  color: green;
+}
+
 @keyframes slide01 {
   0% {
     left: 0%;

@@ -4,6 +4,8 @@ import styles from "./home.module.css";
 import ImgAbout1 from "../../image/about1_img.png";
 import ImgAbout2 from "../../image/about2_img.png";
 import ImgAbout3 from "../../image/about3_img.png";
+import { AiOutlineGithub } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Home = ({ authService }) => {
   return (
@@ -99,7 +101,15 @@ const Home = ({ authService }) => {
         </div>
       </div>
       <footer className={styles.footer}>
-        <p className={styles.footer_text}>made by Lee Soojin</p>
+        <p className={styles.footer_text}>
+          made by Lee Soojin
+          <a
+            href="https://github.com/Lee-Soojin/Food_diary"
+            className={styles.footer_link}
+          >
+            <AiOutlineGithub />
+          </a>
+        </p>
       </footer>
     </div>
   );
