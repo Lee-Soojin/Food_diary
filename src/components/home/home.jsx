@@ -19,8 +19,8 @@ const Home = ({ authService }) => {
           <div className={styles.slideWrap}>
             <ul className={styles.slides}>
               <li className={styles.about1}>
-                <label for="slide3" className={styles.left}></label>
-                <label for="slide2" className={styles.right}></label>
+                <label htmlFor="slide3" className={styles.left}></label>
+                <label htmlFor="slide2" className={styles.right}></label>
                 <div className={styles.about1_img}>
                   <div className={styles.about1_description}>
                     <h3 className={styles.about1_subtitle}>
@@ -44,8 +44,8 @@ const Home = ({ authService }) => {
                 </div>
               </li>
               <li className={styles.about2}>
-                <label for="slide1" className={styles.left}></label>
-                <label for="slide3" className={styles.right}></label>
+                <label htmlFor="slide1" className={styles.left}></label>
+                <label htmlFor="slide3" className={styles.right}></label>
                 <div className={styles.about2_img}>
                   <div className={styles.about2_right}></div>
                   <div className={styles.about2_description}>
@@ -71,8 +71,8 @@ const Home = ({ authService }) => {
                 </div>
               </li>
               <li className={styles.about3}>
-                <label for="slide2" className={styles.left}></label>
-                <label for="slide1" className={styles.right}></label>
+                <label htmlFor="slide2" className={styles.left}></label>
+                <label htmlFor="slide1" className={styles.right}></label>
                 <div className={styles.about3_img}>
                   <div className={styles.about3_description}>
                     <h3 className={styles.about3_subtitle}>

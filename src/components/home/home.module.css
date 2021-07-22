@@ -13,8 +13,12 @@
 }
 
 .Home_Page {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
   display: flex;
   overflow: hidden;
+  touch-action: none;
 }
 
 .slide_section > input[id*="slide"] {
@@ -25,7 +29,7 @@
   display: flex;
   position: absolute;
   top: 5.5rem;
-  background-image: url(../../image/home_bg1_blurred.jpg);
+  background-image: url(../../image/home_background.jpg);
   width: 100%;
   height: 868px;
   overflow: hidden;
@@ -34,12 +38,13 @@
 .slide_section {
   display: flex;
   width: 100%;
-  height: 700px;
+  height: 800px;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  left: 16%;
-  top: 4.5rem;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
   white-space: nowrap;
 }
 
@@ -254,10 +259,28 @@
 }
 
 @media screen and (max-width: 860px) {
+  .home {
+    height: 100%;
+  }
+
+  .slideWrap {
+    height: 800px;
+  }
+
+  .slides {
+    height: 800px;
+  }
+
   .slide_section {
     width: 560px;
+    height: 100%;
     margin: 0 auto;
-    left: 0;
+  }
+
+  .about1,
+  .about2,
+  .about3 {
+    height: 800px;
   }
 
   .about1_img {
@@ -271,34 +294,195 @@
   .about3_img {
     background-image: url(../../image//home_bg3_860.jpg);
   }
+
+  .about1_subtitle,
+  .about3_subtitle {
+    border-radius: 0.4rem;
+    background-color: rgba(255, 255, 255, 0.692);
+    padding: 1rem;
+    left: 10%;
+    top: 5%;
+  }
+
+  .about2_subtitle {
+    border-radius: 0.4rem;
+    background-color: rgba(255, 255, 255, 0.692);
+    padding: 1rem;
+    left: -10%;
+    top: 5%;
+  }
+
+  .about2_right {
+    display: none;
+  }
+
+  .about2_description {
+    left: 5%;
+  }
+
+  .about1_text,
+  .about2_text,
+  .about3_text {
+    width: 23rem;
+    font-size: 1.3rem;
+    top: 58%;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    background-color: rgba(220, 236, 245, 0.404);
+  }
+
+  .about1_text {
+    background-color: rgba(220, 245, 220, 0.404);
+  }
+
+  .about2_text {
+    background-color: rgba(220, 236, 245, 0.404);
+    left: 20%;
+  }
+
+  .about3_text {
+    background-color: rgba(245, 220, 228, 0.404);
+  }
+
+  .footer {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 416px) {
+  .home {
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    width: 100%;
+    min-height: 100vh;
+    flex: 1;
+  }
   .slide_section {
-    top: 1.5rem;
-    width: 20rem;
-    height: 36rem;
+    overflow-y: hidden;
+    object-fit: cover;
+    min-height: 100vh;
+    width: 100%;
+    top: 1rem;
+  }
+
+  .slideWrap {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .about1,
+  .about2,
+  .about3 {
+    min-height: 100%;
+  }
+
+  .about1_img,
+  .about2_img,
+  .about3_img {
+    object-fit: cover;
+    height: 75vh;
+  }
+
+  .about1_subtitle,
+  .about3_subtitle {
+    font-size: 1.1rem;
+    left: 5%;
+    top: 5%;
+  }
+
+  .about2_subtitle {
+    font-size: 1.1rem;
+  }
+
+  .about1_text,
+  .about3_text {
+    font-size: 0.9rem;
+    width: 12rem;
+    top: 58%;
+    left: 40%;
+  }
+
+  .about2_text {
+    font-size: 0.9rem;
+    width: 12rem;
+    left: -10%;
+  }
+
+  .about1_descriptImg,
+  .about2_descriptImg,
+  .about3_descriptImg {
+    display: flex;
+    width: 8rem;
+    position: absolute;
+    top: 31%;
+    left: 10%;
+  }
+
+  .about2_descriptImg {
+    left: 35%;
+  }
+
+  .about3_descriptImg {
+    width: 10rem;
+  }
+
+  .footer {
+    display: flex;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 324px) {
+  .slide_section {
+    top: -2.8%;
+    width: 100%;
+    height: 90%;
     margin: 0 auto;
+    left: 0;
+    font-size: 0.8rem;
+  }
+  .about1_description,
+  .about2_description,
+  .about3_description {
+    width: 100vw;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about1_text,
+  .about2_text,
+  .about3_text {
+    font-size: 0.8rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about1_text,
+  .about3_text {
+    font-size: 0.8rem;
+    width: 11rem;
+    top: 55%;
+    left: 30%;
+  }
+
+  .about2_subtitle {
+    width: 15rem;
+    font-size: 1rem;
+  }
+
+  .about1_descriptImg,
+  .about2_descriptImg,
+  .about3_descriptImg {
+    width: 5rem;
+    align-items: center;
+    justify-content: center;
     left: 0;
   }
 
-  .about1_img {
-    object-fit: cover;
-  }
-
-  .right {
-    width: 3rem;
-    object-fit: cover;
-    right: 1rem;
-  }
-
-  .left {
-    width: 3rem;
-    object-fit: cover;
-    left: 1rem;
-  }
-
-  .slides > li > label {
-    top: 45%;
+  .about3_descriptImg {
+    width: 7rem;
+    left: 10%;
   }
 }

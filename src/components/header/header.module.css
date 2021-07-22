@@ -63,7 +63,7 @@ a {
 .category {
   display: flex;
   list-style: none;
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 4rem;
   transition: all 0.3ms ease;
 }
 
@@ -142,6 +142,6 @@ a {
 
 @media screen and (max-width: 360px) {
   .BtnMenuBar {
-    right: 1.9rem;
+    right: 0.5rem;
   }
 }

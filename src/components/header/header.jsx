@@ -57,9 +57,6 @@ const Header = ({ authService }) => {
         <li className={styles.category} key="home">
           <Link to="/">Home</Link>
         </li>
-        <li className={styles.category} key="menu">
-          Menu
-        </li>
       </ul>
       <button
         className={`BtnLogout ${isLogin ? "visible" : "invisible"}`}

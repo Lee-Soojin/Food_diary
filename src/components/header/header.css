@@ -78,6 +78,6 @@
 @media screen and (max-width: 360px) {
   .BtnLogin.visible,
   .BtnLogout.visible {
-    right: 7rem;
+    right: 5rem;
   }
 }
