@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../header/header";
 import styles from "./home.module.css";
 import ImgAbout1 from "../../image/about1_img.png";
@@ -6,42 +6,19 @@ import ImgAbout2 from "../../image/about2_img.png";
 import ImgAbout3 from "../../image/about3_img.png";
 
 const Home = ({ authService }) => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleChange = (e) => {
-    console.log(e.currentTarget.id);
-  };
-
   return (
     <div className={styles.Home_Page}>
       <Header authService={authService} />
       <div className={styles.home}>
         <div className={styles.slide_section}>
-          <input
-            type="radio"
-            name="slide"
-            className={styles.slide1}
-            id="slide1"
-            onChange={handleChange}
-          />
-          <input
-            type="radio"
-            name="slide"
-            className={styles.slide2}
-            id="slide2"
-            onChange={handleChange}
-          />
-          <input
-            type="radio"
-            name="slide"
-            className={styles.slide3}
-            id="slide3"
-            onChange={handleChange}
-          />
+          <input type="radio" name="slide1" id="slide1" defaultChecked />
+          <input type="radio" name="slide2" id="slide2" />
+          <input type="radio" name="slide3" id="slide3" />
           <div className={styles.slideWrap}>
             <ul className={styles.slides}>
               <li className={styles.about1}>
-                <label htmlFor="slide3" className={styles.left}></label>
+                <label for="slide3" className={styles.left}></label>
+                <label for="slide2" className={styles.right}></label>
                 <div className={styles.about1_img}>
                   <div className={styles.about1_description}>
                     <h3 className={styles.about1_subtitle}>
@@ -63,10 +40,10 @@ const Home = ({ authService }) => {
                   </div>
                   <div className={styles.about1_right}></div>
                 </div>
-                <label htmlFor="slide2" className={styles.right}></label>
               </li>
               <li className={styles.about2}>
-                <label htmlFor="slide1" className={styles.left}></label>
+                <label for="slide1" className={styles.left}></label>
+                <label for="slide3" className={styles.right}></label>
                 <div className={styles.about2_img}>
                   <div className={styles.about2_right}></div>
                   <div className={styles.about2_description}>
@@ -90,10 +67,10 @@ const Home = ({ authService }) => {
                     </p>
                   </div>
                 </div>
-                <label htmlFor="slide3" className={styles.right}></label>
               </li>
               <li className={styles.about3}>
-                <label htmlFor="slide2" className={styles.left}></label>
+                <label for="slide2" className={styles.left}></label>
+                <label for="slide1" className={styles.right}></label>
                 <div className={styles.about3_img}>
                   <div className={styles.about3_description}>
                     <h3 className={styles.about3_subtitle}>
@@ -116,7 +93,6 @@ const Home = ({ authService }) => {
                   </div>
                   <div className={styles.about3_right}></div>
                 </div>
-                <label htmlFor="slide1" className={styles.right}></label>
               </li>
             </ul>
           </div>

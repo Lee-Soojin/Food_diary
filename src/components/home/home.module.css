@@ -34,7 +34,7 @@
 .slide_section {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 700px;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
@@ -43,9 +43,13 @@
   white-space: nowrap;
 }
 
+.slide_section:hover {
+  cursor: default;
+}
+
 .slideWrap {
   position: relative;
-  display: flex;
+
   width: 1120px;
   height: 640px;
   overflow: hidden;
@@ -54,24 +58,27 @@
 }
 
 .slides {
-  display: flex;
   width: 100%;
   height: 100%;
   padding: 0;
   flex-direction: row;
   transition: all 0.5s;
+  white-space: nowrap;
 }
 
 .about1,
 .about2,
 .about3 {
   position: relative;
-  display: flex;
+  display: inline-block;
+  vertical-align: middle;
   width: 100%;
   height: 100%;
+  transition: all 0.35s;
 }
 
 .about1_img {
+  position: relative;
   display: flex;
   background-image: url(../../image/home_bg1.jpg);
   width: 1120px;
@@ -79,6 +86,7 @@
 }
 
 .about2_img {
+  position: relative;
   display: flex;
   background-image: url(../../image/home_bg2.jpg);
   width: 1120px;
@@ -86,6 +94,7 @@
 }
 
 .about3_img {
+  position: relative;
   display: flex;
   background-image: url(../../image/home_bg3.jpg);
   width: 1120px;
@@ -178,34 +187,12 @@
 }
 
 .slides > li > label {
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.left {
-  display: flex;
-  position: absolute;
-  left: 2rem;
-  background: url("../../image/left.png") center center / 100% no-repeat;
-  z-index: 100;
-  width: 5rem;
-  height: 5rem;
-}
-
-.right {
-  display: flex;
-  position: absolute;
-  right: 2rem;
-  background: url("../../image/right.png") center center / 100% no-repeat;
-  z-index: 50;
-  width: 5rem;
-  height: 5rem;
+  display: none;
 }
 
 .slide_section [id="slide1"]:checked ~ .slideWrap .slides > li {
   transform: translateX(0%);
-  animation: slide01 20s infinite;
+  animation: slide01 15s infinite;
 }
 
 .slide_section [id="slide2"]:checked ~ .slideWrap .slides > li {
