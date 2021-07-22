@@ -158,6 +158,12 @@ figure > img {
   }
 }
 
+@media screen and (max-width: 750px) {
+  .diary_container {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 332px) {
   .diary_container {
     width: 16rem;
