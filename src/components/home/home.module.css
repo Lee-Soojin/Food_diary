@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Jua_regular";
+  src: url(../../fonts/Jua-Regular.ttf);
+}
+
+@font-face {
+  font-family: "HangeulNuri";
+  src: url(../../fonts/HangeulNuriR.ttf);
+}
+
 .Home_Page {
   overflow-y: hidden;
 }
@@ -82,6 +92,91 @@
   height: 640px;
 }
 
+.about1_description,
+.about2_description,
+.about3_description {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.about1_right,
+.about2_right,
+.about3_right {
+  display: flex;
+  width: 55%;
+}
+
+.about1_descriptImg,
+.about2_descriptImg,
+.about3_descriptImg {
+  display: flex;
+  width: 9rem;
+  position: absolute;
+  top: 31%;
+  left: 50%;
+}
+
+.about2_descriptImg {
+  width: 6rem;
+  left: 30%;
+}
+
+.about3_descriptImg {
+  top: 33%;
+  left: 45%;
+}
+
+.about1_subtitle,
+.about3_subtitle {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Jua_regular";
+  font-size: 2rem;
+  color: green;
+}
+
+.about2_subtitle {
+  position: absolute;
+  top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Jua_regular";
+  font-size: 2rem;
+  color: rgb(83, 83, 243);
+}
+
+.about3_subtitle {
+  color: palevioletred;
+  left: 25%;
+}
+
+.about1_text,
+.about3_text {
+  display: flex;
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  font-size: 1.2rem;
+  font-family: "HangeulNuri";
+  white-space: pre-line;
+}
+
+.about2_text {
+  display: flex;
+  position: absolute;
+  top: 60%;
+  font-size: 1.2rem;
+  font-family: "HangeulNuri";
+  white-space: pre-line;
+}
+
 .slides > li > label {
   top: 50%;
   transform: translateY(-50%);
@@ -110,6 +205,7 @@
 
 .slide_section [id="slide1"]:checked ~ .slideWrap .slides > li {
   transform: translateX(0%);
+  animation: slide01 20s infinite;
 }
 
 .slide_section [id="slide2"]:checked ~ .slideWrap .slides > li {
@@ -118,6 +214,30 @@
 
 .slide_section [id="slide3"]:checked ~ .slideWrap .slides > li {
   transform: translateX(-200%);
+}
+
+@keyframes slide01 {
+  0% {
+    left: 0%;
+  }
+  23% {
+    left: 0%;
+  }
+  30% {
+    left: -100%;
+  }
+  53% {
+    left: -100%;
+  }
+  60% {
+    left: -200%;
+  }
+  93% {
+    left: -200%;
+  }
+  100% {
+    left: 0%;
+  }
 }
 
 @media screen and (max-width: 860px) {
