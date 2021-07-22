@@ -101,6 +101,12 @@ figure > img {
   color: red;
 }
 
+@media screen and (max-width: 860px) {
+  .diary_container {
+    width: 70%;
+  }
+}
+
 @media screen and (max-width: 416px) {
   .diary_container {
     position: relative;

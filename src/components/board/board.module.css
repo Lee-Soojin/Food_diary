@@ -65,6 +65,13 @@
   right: 2rem;
 }
 
+@media screen and (max-width: 860px) {
+  .page_board {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
 @media screen and (max-width: 416px) {
   .post_container {
     width: 20rem;
