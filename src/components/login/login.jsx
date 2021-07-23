@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styles from "./login.module.css";
-import imgLogin from "../../image/bacon_login.png";
+import imgLogin from "../../image/login_title.png";
+import buttonImg from "../../image/login_button.png";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 
@@ -52,9 +53,8 @@ const Login = ({ authService }) => {
   };
   return (
     <section className={styles.Login}>
-      {/* <h1 className={styles.title}>Login</h1> */}
+      <img src={imgLogin} alt="imgLogin" className={styles.login_logo} />
       <section className={styles.Login_wrap}>
-        <img src={imgLogin} alt="imgLogin" className={styles.login_logo} />
         <section className={styles.Login_container}>
           <div className={styles.email_login}>
             <h3 className={styles.user_login_title}>회원 로그인</h3>
@@ -83,22 +83,27 @@ const Login = ({ authService }) => {
                   onChange={handleChange}
                 />
               </div>
+              <button className={styles.BtnLogin} type="submit">
+                <img src={buttonImg} alt="login button" />
+              </button>
             </form>
           </div>
           <ul className={styles.social_login}>
             <p className={styles.social_login_title}> 소셜 로그인 </p>
-            <li className={styles.login_google} key="google_login">
-              <button className={styles.BtnGoogle} onClick={onLogin}>
-                <FcGoogle className={styles.logo_google} />
-                <p>Google</p>
-              </button>
-            </li>
-            <li className={styles.login_facebook} key="facebook_login">
-              <button className={styles.BtnFacebook} onClick={onLogin}>
-                <FaFacebook className={styles.logo_facebook} />
-                <p>Facebook</p>
-              </button>
-            </li>
+            <div className={styles.social_BtnContainer}>
+              <li className={styles.login_google} key="google_login">
+                <button className={styles.BtnGoogle} onClick={onLogin}>
+                  <FcGoogle className={styles.logo_google} />
+                  <p>Google</p>
+                </button>
+              </li>
+              <li className={styles.login_facebook} key="facebook_login">
+                <button className={styles.BtnFacebook} onClick={onLogin}>
+                  <FaFacebook className={styles.logo_facebook} />
+                  <p>Facebook</p>
+                </button>
+              </li>
+            </div>
           </ul>
           <div className={styles.signup}>
             <p className={styles.signup_text}>

@@ -30,7 +30,6 @@ import MyCustomUploadAdapterPlugin from "../custom_img_upload/custom_img_upload"
 import Search from "../search/search";
 import StarScore from "../star_score/star_score";
 import { useHistory } from "react-router-dom";
-import BoardList from "../board_list/board_list";
 
 const installedPlugins = [
   Alignment,
