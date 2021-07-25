@@ -134,11 +134,11 @@
 @media screen and (max-width: 360px) {
   .ck-editor__editable:not(.ck-editor__nested-editable) {
     min-height: 13rem;
-    min-width: 21rem;
+    min-width: 20rem;
     margin: 0 auto;
   }
 
   .ck.ck-editor {
-    max-width: 21rem;
+    max-width: 20rem;
   }
 }

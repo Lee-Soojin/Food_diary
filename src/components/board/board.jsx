@@ -47,16 +47,18 @@ const Board = ({ Repository, authService }) => {
     history.push("/diary");
   };
 
+  useEffect(() => {
+    if (posts === {}) {
+      console.log("posts:", posts);
+    }
+  });
+
   return (
     <div className={styles.page_board}>
       <Header authService={authService} className={styles.header} />
       <div className={styles.Board_container}>
         <div className={styles.post_container} ref={postRef}>
-          {!posts == {} ? (
-            Object.keys(posts).map((key) => (
-              <Post key={key} post={posts[key]} deletePost={DeletePost} />
-            ))
-          ) : (
+          {Object.keys(posts).length == 0 ? (
             <div className={styles.NoPostContainer}>
               <p className={styles.noPost_text}>아직 일기가 없어요</p>
               <img
@@ -68,6 +70,10 @@ const Board = ({ Repository, authService }) => {
                 첫 푸드 다이어리 쓰러가기
               </button>
             </div>
+          ) : (
+            Object.keys(posts).map((key) => (
+              <Post key={key} post={posts[key]} deletePost={DeletePost} />
+            ))
           )}
         </div>
       </div>
