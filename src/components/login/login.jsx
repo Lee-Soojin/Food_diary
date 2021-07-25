@@ -7,13 +7,11 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 
 const Login = ({ authService }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const history = useHistory();
 
   const goToHome = (userId) => {
     history.push({
-      pathname: "/",
+      pathname: "/diary",
       state: { id: userId },
     });
   };
@@ -21,7 +19,7 @@ const Login = ({ authService }) => {
   const onLogin = (event) => {
     authService
       .login(event.currentTarget.textContent) //
-      .then((data) => goToHome(data.user.id));
+      .then((data) => goToHome(data.user.uid));
   };
 
   useEffect(() => {
@@ -30,24 +28,27 @@ const Login = ({ authService }) => {
     });
   });
 
-  const MemberLogin = (e) => {
-    // e.preventDefault();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const MemberLogin = async (event) => {
+    event && event.preventDefault();
     authService
       .signIn(email, password) //
       .then(console.log);
   };
 
-  const handleChange = (e) => {
-    const type = e.target.name;
+  const handleChange = (event) => {
+    const type = event.target.name;
     if (type === "email") {
-      setEmail(e.target.value);
+      setEmail(event.target.value);
     } else if (type === "password") {
-      setPassword(e.target.value);
+      setPassword(event.target.value);
     }
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
       MemberLogin();
     }
   };
@@ -61,26 +62,26 @@ const Login = ({ authService }) => {
             <form
               className={styles.login_form}
               onSubmit={MemberLogin}
-              onKeyPress={handleKeyPress}
+              onKeyPress={(event) => handleKeyPress(event)}
             >
               <div className={styles.email}>
                 <input
-                  className={styles.input_email}
                   type="email"
                   placeholder="Email"
                   name="email"
                   value={email}
                   onChange={handleChange}
+                  className={styles.input_email}
                 />
               </div>
               <div className={styles.password}>
                 <input
-                  className={styles.input_password}
                   type="password"
                   placeholder="비밀번호"
                   name="password"
                   value={password}
                   onChange={handleChange}
+                  className={styles.input_password}
                 />
               </div>
               <button className={styles.BtnLogin} type="submit">

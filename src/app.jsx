@@ -27,7 +27,6 @@ function App({ FileInput, naver, authService, Repository }) {
         )}
         exact
       />
-      {/* <Route path="/post" render={() => <Post />}></Route> */}
       <Route
         path="/login"
         render={() => <Login authService={authService} />}

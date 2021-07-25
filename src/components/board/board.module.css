@@ -65,6 +65,10 @@
   right: 2rem;
 }
 
+.noPost {
+  display: flex;
+}
+
 @media screen and (max-width: 860px) {
   .page_board {
     width: 100vw;
