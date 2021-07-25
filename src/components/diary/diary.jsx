@@ -144,17 +144,17 @@ const Diary = ({ naver, authService, Repository }) => {
     setScore(score);
   };
 
-  useEffect(() => {
-    console.log("score:", score);
-  }, [handleScore]);
+  // useEffect(() => {
+  //   console.log("score:", score);
+  // }, [handleScore]);
 
   const handlePlace = (place) => {
     setPos(place);
   };
 
-  useEffect(() => {
-    console.log("place: ", pos);
-  }, [handlePlace]);
+  // useEffect(() => {
+  //   console.log("place: ", pos);
+  // }, [handlePlace]);
 
   const handleSubmit = (event) => {
     event.preventDefault();

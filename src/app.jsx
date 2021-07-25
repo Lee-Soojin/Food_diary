@@ -4,7 +4,6 @@ import Diary from "./components/diary/diary";
 import "./app.css";
 import Login from "./components/login/login";
 import SignUp from "./components/signup/signup";
-import Post from "./components/post/post";
 import Board from "./components/board/board";
 
 function App({ FileInput, naver, authService, Repository }) {

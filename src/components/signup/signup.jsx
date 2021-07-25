@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styles from "./signup.module.css";
-import Img1 from "../../image/fruit_dish_shadow.png";
 
 const SignUp = ({ authService }) => {
   const [email, setEmail] = useState("");
