@@ -3,6 +3,11 @@
   src: url(../../fonts/Pacifico-Regular.ttf);
 }
 
+@font-face {
+  font-family: "jua_regular";
+  src: url(../../fonts/Jua-Regular.ttf);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -65,14 +70,55 @@
   right: 2rem;
 }
 
-.noPost {
+.NoPostContainer {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.767);
+  border-radius: 1rem;
+  width: 50vw;
+  height: 30vh;
+}
+
+.noPost_text {
+  font-size: 1.3rem;
+  font-family: "jua_regular";
+}
+
+.noPost_img {
+  display: flex;
+  width: 15rem;
+  margin: 1.5rem 0;
+}
+
+.BtnGotoWrite {
+  border: none;
+  background-color: transparent;
+  font-family: "jua_regular";
+  font-size: 1rem;
+  background-color: gold;
+  border-radius: 1rem;
+  padding: 0.3rem 0.7rem;
+  transition: all ease 0.1s;
+  cursor: pointer;
+}
+
+.BtnGotoWrite:hover {
+  transform: scale(1.1);
+  color: green;
 }
 
 @media screen and (max-width: 860px) {
   .page_board {
     width: 100vw;
     overflow-x: hidden;
+  }
+
+  .NoPostContainer {
+    transform: translateY(15%);
+    width: 60vw;
+    height: 60vh;
   }
 }
 
@@ -85,5 +131,9 @@
 @media screen and (max-width: 416px) {
   .post_container {
     width: 20rem;
+  }
+
+  .noPost_img {
+    width: 13rem;
   }
 }

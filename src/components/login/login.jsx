@@ -11,7 +11,7 @@ const Login = ({ authService }) => {
 
   const goToHome = (userId) => {
     history.push({
-      pathname: "/diary",
+      pathname: "/",
       state: { id: userId },
     });
   };
