@@ -44,8 +44,6 @@
   cursor: pointer;
 }
 
-/* Responsive **/
-
 @media screen and (max-width: 860px) {
   .BtnLogin.visible,
   .BtnLogout.visible {
