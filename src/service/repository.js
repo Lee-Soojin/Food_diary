@@ -14,7 +14,6 @@ class Repository {
 
   savePost(userId, post) {
     firebaseDatabase.ref(`${userId}/board/${post.id}`).set(post);
-    console.log("userid:", userId);
   }
 
   removePost(userId, post) {

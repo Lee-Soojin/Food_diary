@@ -5,7 +5,6 @@ import ImgAbout1 from "../../image/about1_img.png";
 import ImgAbout2 from "../../image/about2_img.png";
 import ImgAbout3 from "../../image/about3_img.png";
 import { AiOutlineGithub } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
 const Home = ({ authService }) => {
   return (

@@ -55,6 +55,7 @@ figure > img {
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-weight: 600;
 }
 
 .pos {

@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, memo } from "react";
 import styles from "./header.module.css";
 import logoImg from "../../image/home_logo.png";
 import { Link, useHistory } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import "./header.css";
 
-const Header = ({ authService }) => {
+const Header = memo(({ authService }) => {
   const history = useHistory();
   const historyState = history.location.state;
   const [userId, setUserId] = useState(historyState && historyState.id);
@@ -75,6 +75,6 @@ const Header = ({ authService }) => {
       </button>
     </div>
   );
-};
+});
 
 export default Header;

@@ -7,10 +7,6 @@ const Post = ({ updatePost, deletePost, post }) => {
     deletePost(post);
   };
 
-  const handleRewrite = () => {
-    updatePost(post);
-  };
-
   const [date, setDate] = useState("");
   const [title, setTitle] = useState("");
   const [pos, setPos] = useState("");
@@ -39,7 +35,6 @@ const Post = ({ updatePost, deletePost, post }) => {
         </div>
         <div
           dangerouslySetInnerHTML={{ __html: content }}
-          className={styles.container}
           className={styles.content}
         ></div>
       </div>

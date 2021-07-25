@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import Header from "../header/header";
 import styles from "./diary.module.css";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
@@ -56,7 +56,7 @@ const installedPlugins = [
   Highlight,
 ];
 
-const Diary = ({ naver, authService, Repository }) => {
+const Diary = memo(({ naver, authService, Repository }) => {
   const [editor, setEditor] = useState(undefined);
   const [posts, setPosts] = useState({});
   const [title, setTitle] = useState("");
@@ -115,16 +115,6 @@ const Diary = ({ naver, authService, Repository }) => {
       return updated;
     });
     Repository.savePost(userId, post);
-    console.log(post);
-  };
-
-  const DeletePost = (post) => {
-    setPosts((posts) => {
-      const updated = { ...posts };
-      delete updated[post.id];
-      return updated;
-    });
-    Repository.removePost(userId, post);
   };
 
   const handleDate = () => {
@@ -144,17 +134,9 @@ const Diary = ({ naver, authService, Repository }) => {
     setScore(score);
   };
 
-  // useEffect(() => {
-  //   console.log("score:", score);
-  // }, [handleScore]);
-
   const handlePlace = (place) => {
     setPos(place);
   };
-
-  // useEffect(() => {
-  //   console.log("place: ", pos);
-  // }, [handlePlace]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -279,6 +261,6 @@ const Diary = ({ naver, authService, Repository }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Diary;

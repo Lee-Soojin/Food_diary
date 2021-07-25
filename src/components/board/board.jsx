@@ -47,18 +47,12 @@ const Board = ({ Repository, authService }) => {
     history.push("/diary");
   };
 
-  useEffect(() => {
-    if (posts === {}) {
-      console.log("posts:", posts);
-    }
-  });
-
   return (
     <div className={styles.page_board}>
       <Header authService={authService} className={styles.header} />
       <div className={styles.Board_container}>
         <div className={styles.post_container} ref={postRef}>
-          {Object.keys(posts).length == 0 ? (
+          {Object.keys(posts).length === 0 ? (
             <div className={styles.NoPostContainer}>
               <p className={styles.noPost_text}>아직 일기가 없어요</p>
               <img
