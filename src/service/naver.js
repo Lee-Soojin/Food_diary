@@ -4,8 +4,14 @@ class Naver {
   clientID = "efDAPMPO5E__UqibZ1Or";
   clientSecret = "yKzenYVud8";
 
+  constructor() {
+    this.naver = axios.create({
+      baseURL: "https://openapi.naver.com",
+    });
+  }
+
   async search(query) {
-    const res = await axios.get("/v1/search/local", {
+    const res = await this.naver.get("/api/v1/search/local", {
       params: {
         query: query,
         display: 5,
