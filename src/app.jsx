@@ -5,6 +5,7 @@ import "./app.css";
 import Login from "./components/login/login";
 import SignUp from "./components/signup/signup";
 import Board from "./components/board/board";
+import Search from "./components/search/search";
 
 function App({ FileInput, naver, authService, Repository }) {
   return (
@@ -40,6 +41,7 @@ function App({ FileInput, naver, authService, Repository }) {
           <Board authService={authService} Repository={Repository} />
         )}
       ></Route>
+      <Route path="/search" component={Search} exact={true}></Route>
     </BrowserRouter>
   );
 }
