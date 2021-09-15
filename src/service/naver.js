@@ -4,8 +4,11 @@ class Naver {
   clientID = "efDAPMPO5E__UqibZ1Or";
   clientSecret = "yKzenYVud8";
 
+  PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
+  URL = `${this.PROXY}/v1/search/local.json`;
+
   async search(query) {
-    const res = await axios.get("v1/search/local", {
+    const res = await axios.get(this.URL, {
       params: {
         query: query,
         display: 5,
