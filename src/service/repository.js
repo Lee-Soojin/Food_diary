@@ -1,8 +1,6 @@
 import { firebaseDatabase } from "./firebase";
 
 class Repository {
-  // board = {};
-
   syncPosts(userId, onUpdate) {
     const ref = firebaseDatabase.ref(`${userId}/board`);
     ref.on("value", (snapshot) => {

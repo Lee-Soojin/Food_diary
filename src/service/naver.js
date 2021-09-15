@@ -5,7 +5,7 @@ class Naver {
   clientSecret = "yKzenYVud8";
 
   async search(query) {
-    const res = await axios.get("/v1/search/local", {
+    const res = await axios.get("v1/search/local", {
       params: {
         query: query,
         display: 5,
@@ -15,7 +15,7 @@ class Naver {
       headers: {
         "X-Naver-Client-Id": this.clientID,
         "X-Naver-Client-Secret": this.clientSecret,
-        // "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "*",
       },
     });
     return res.data.items.map((item) => ({
