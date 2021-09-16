@@ -1,11 +1,12 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import Home from "./components/home/home";
+//import Home from "./components/home/home";
 import Diary from "./components/diary/diary";
 import "./app.css";
 import Login from "./components/login/login";
 import SignUp from "./components/signup/signup";
 import Board from "./components/board/board";
 import Search from "./components/search/search";
+import MainHome from "./components/home/main_home";
 
 function App({ FileInput, naver, authService, Repository }) {
   return (
@@ -13,7 +14,7 @@ function App({ FileInput, naver, authService, Repository }) {
       <Route
         exact
         path="/"
-        render={() => <Home authService={authService} />}
+        render={() => <MainHome authService={authService} />}
       ></Route>
       <Route
         path="/diary"

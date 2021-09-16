@@ -18,7 +18,7 @@ a {
 }
 
 @font-face {
-  font-family: "jua_regular";
+  font-family: "Jua_regular";
   src: url(../../fonts/Jua-Regular.ttf);
 }
 
@@ -78,7 +78,7 @@ a {
   top: 2rem;
   display: flex;
   cursor: pointer;
-  font-family: "jua_regular";
+  font-family: "Jua_regular";
   color: green;
   background-color: white;
   border-radius: 1rem;
