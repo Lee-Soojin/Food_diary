@@ -1,10 +1,20 @@
 :root {
   --home-text-font-family: "ghanachoco";
+  --home-button-font-family: "ghanachoco";
+  --home-text-title-font-family: "GmarketSansLight";
 }
 
 @font-face {
   font-family: "ghanachoco";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
@@ -25,14 +35,17 @@
   top: 88px;
   width: 100%;
   height: 820px;
-  background: white;
+  background: url(../../image/main_home_bg.jpg) center;
+  border-top: 4px solid black;
+  /* #fff59d; */
 }
 
 .slide {
   position: relative;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 30%;
+  margin: auto;
   align-items: center;
   justify-content: center;
 }
@@ -64,6 +77,51 @@
   animation-delay: 4s;
 }
 
+.login_button {
+  position: absolute;
+  bottom: 10%;
+  left: 46.5%;
+  width: 8rem;
+  height: 4rem;
+  padding: 0;
+  border: 4px solid black;
+  background-color: gold;
+  border-radius: 50%;
+  font-family: var(--home-button-font-family);
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.login_button:hover {
+  transform: scale(1.1);
+}
+
+.home_text_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 30%;
+  top: 10%;
+  right: 2em;
+}
+
+.home_text_title {
+  font-family: var(--home-text-title-font-family);
+  font-weight: 900;
+  cursor: default;
+  transition: all ease 0.5s;
+  border-bottom: 1.5rem solid gold;
+}
+
+.home_text_body {
+  font-family: var(--home-text-title-font-family);
+  font-weight: 700;
+  font-size: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1.5rem solid gold;
+}
+
 .footer {
   display: flex;
   width: 100%;
@@ -73,7 +131,8 @@
   background-color: #ffd740;
   align-items: center;
   justify-content: center;
-  font-family: "HangeulNuri";
+  font-family: var(--home-text-font-family);
+  border-top: 4px solid black;
 }
 
 .footer_text {
@@ -114,5 +173,23 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    background-color: red;
+  }
+
+  33% {
+    background-color: yellow;
+  }
+
+  66% {
+    background-color: green;
+  }
+
+  100% {
+    background-color: red;
   }
 }
