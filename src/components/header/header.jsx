@@ -40,6 +40,13 @@ const Header = memo(({ authService }) => {
     setOpen(!open);
   };
 
+  const handleListClick = (event) => {
+    event.preventDefault();
+    if (!userId) {
+      alert("로그인 후 이용해주세요");
+    }
+  };
+
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
@@ -48,10 +55,10 @@ const Header = memo(({ authService }) => {
         </Link>
       </div>
       <ul className={`menu ${open ? "open" : "closed"}`}>
-        <li className={styles.category} key="write">
+        <li className={styles.category} key="write" onClick={handleListClick}>
           <Link to="/diary">Write Diary</Link>
         </li>
-        <li className={styles.category} key="mypage">
+        <li className={styles.category} key="mypage" onClick={handleListClick}>
           <Link to="/board">My Diary</Link>
         </li>
         <li className={styles.category} key="home">

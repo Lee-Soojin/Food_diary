@@ -32,6 +32,9 @@ const MainHome = ({ authService }) => {
             다이어트 음식 일기, 맛집 일기, 분위기 좋은 카페 기록 등 사진 / 별점
             / 위치 추가 기능과 함께 오늘의 하루를 기록해보세요
           </p>
+          <Link to="/login">
+            <button className={styles.goto_diary_button}>일기 쓰러가기</button>
+          </Link>
         </div>
       </div>
       <footer className={styles.footer}>

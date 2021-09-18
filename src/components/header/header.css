@@ -13,16 +13,18 @@
   display: flex;
   position: absolute;
   right: 2.2rem;
-  top: 2rem;
+  top: 1.8rem;
   display: flex;
   cursor: pointer;
   font-family: "Jua_regular";
-  color: green;
+  font-size: 0.9rem;
+  color: black;
   background-color: white;
   border-radius: 1rem;
   border: none;
-  width: 4rem;
-  height: 1.5rem;
+  padding: 0.1rem;
+  width: 5rem;
+  height: 1.8rem;
   align-items: center;
   justify-content: center;
   transition: all 10ms ease;
@@ -82,5 +84,7 @@
   .BtnLogin.visible,
   .BtnLogout.visible {
     right: 5rem;
+    width: 4rem;
+    font-size: 0.85rem;
   }
 }

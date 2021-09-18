@@ -13,7 +13,7 @@ a {
 }
 
 @font-face {
-  font-family: Pacifico_Regular;
+  font-family: "Pacifico_Regular";
   src: url(../../fonts/Pacifico-Regular.ttf);
 }
 
@@ -79,7 +79,7 @@ a {
   display: flex;
   cursor: pointer;
   font-family: "Jua_regular";
-  color: green;
+  color: black;
   background-color: white;
   border-radius: 1rem;
   border: none;
