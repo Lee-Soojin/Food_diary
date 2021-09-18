@@ -53,10 +53,11 @@ const Login = ({ authService }) => {
     }
   };
   return (
-    <section className={styles.Login}>
-      <img src={imgLogin} alt="imgLogin" className={styles.login_logo} />
-      <section className={styles.Login_wrap}>
-        <section className={styles.Login_container}>
+    <section className={styles.login}>
+      <h2 className={styles.login_title}>LOGIN</h2>
+      <div className={styles.login_wrap}>
+        <section className={styles.login_image}></section>
+        <section className={styles.login_container}>
           <div className={styles.email_login}>
             <h3 className={styles.user_login_title}>회원 로그인</h3>
             <form
@@ -85,7 +86,7 @@ const Login = ({ authService }) => {
                 />
               </div>
               <button className={styles.BtnLogin} type="submit">
-                <img src={buttonImg} alt="login button" />
+                LOGIN
               </button>
             </form>
           </div>
@@ -115,7 +116,7 @@ const Login = ({ authService }) => {
             </p>
           </div>
         </section>
-      </section>
+      </div>
     </section>
   );
 };
