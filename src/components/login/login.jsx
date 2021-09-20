@@ -92,7 +92,7 @@ const Login = ({ authService }) => {
           </div>
           <ul className={styles.social_login}>
             <p className={styles.social_login_title}> 소셜 로그인 </p>
-            <div className={styles.social_BtnContainer}>
+            <div className={styles.social_button_container}>
               <li className={styles.login_google} key="google_login">
                 <button className={styles.BtnGoogle} onClick={onLogin}>
                   <FcGoogle className={styles.logo_google} />
