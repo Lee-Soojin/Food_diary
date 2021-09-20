@@ -99,6 +99,7 @@
   margin-top: 1rem;
   font-family: var(--login-text-font-family);
   font-size: 1.2rem;
+  cursor: default;
 }
 
 .login_form {
@@ -183,6 +184,7 @@
   justify-content: center;
   border: none;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .BtnGoogle:hover,

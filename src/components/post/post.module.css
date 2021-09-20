@@ -7,6 +7,36 @@
   src: url(../../fonts/HangeulNuriR.ttf);
 }
 
+@font-face {
+  font-family: "MapoPeacefull";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --title-font-family: "GmarketSansMedium";
+  --date-font-family: "GmarketSansLight";
+  --score-font-family: "GmarketSansLight";
+}
+
 div.container > img {
   display: flex;
   max-width: 10rem;
@@ -26,8 +56,7 @@ figure > img {
   align-items: center;
   justify-content: center;
   margin: 1rem auto;
-  border-radius: 0.5rem;
-  box-shadow: 1px 1px 10px black;
+  box-shadow: 1px 1px 7px gray;
   background-color: rgba(255, 255, 255, 0.863);
 }
 
@@ -45,12 +74,12 @@ figure > img {
 
 .date {
   display: flex;
-  font-family: "HangeulNuri_regular";
+  font-family: var(--date-font-family);
 }
 
 .title {
   display: flex;
-  font-family: "HangeulNuri_regular";
+  font-family: var(--title-font-family);
   width: 8.7rem;
   align-items: center;
   justify-content: center;
@@ -65,7 +94,7 @@ figure > img {
 
 .score {
   display: flex;
-  font-family: "HangeulNuri_regular";
+  font-family: var(--score-font-family);
 }
 
 .content {
@@ -78,6 +107,21 @@ figure > img {
   overflow-y: scroll;
   margin: 0;
   margin-right: 4rem;
+}
+
+.content::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 1rem;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: orange;
+  border-radius: 1rem;
+}
+
+.content::-webkit-scrollbar-track {
+  background-color: gainsboro;
+  border-radius: 1rem;
 }
 
 .BtnDelete {

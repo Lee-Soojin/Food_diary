@@ -30,9 +30,9 @@
   margin: 0 auto;
   height: 100%;
   width: 100%;
-  background-image: url(../../image/hotdog_repetitive.jpg);
   overflow-y: scroll;
   margin-bottom: 3rem;
+  background-color: rgb(234, 237, 248);
 }
 
 .post_container {
