@@ -4,7 +4,10 @@
 
 :root {
   --login-title-font-family: "ghanachoco";
-  --login-text-font-family: "Hanna";
+  --login-text-font-family: "GmarketSansLight";
+  --login-button-font-family: "GmarketSansLight";
+  --login-signup-text-font-family: "GmarketSansLight";
+  --login-background-color: rgb(247, 218, 56);
 }
 
 @font-face {
@@ -15,10 +18,20 @@
   font-style: normal;
 }
 
-@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@font-face {
+  font-family: "GmarketSansLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-.hanna * {
-  font-family: "Hanna", fantasy;
+@font-face {
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 .login {
@@ -29,7 +42,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: gold;
+  background-color: var(--login-background-color);
 }
 
 .login_wrap {
@@ -39,51 +52,45 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  width: 70%;
+  width: 40%;
   height: 80%;
   border-radius: 1rem;
-  box-shadow: 4px 4px 8px black;
-}
-
-.login_image {
-  display: flex;
-  width: 25%;
-  height: 100%;
-  background: url(../../image/login_image.jpg) center;
-  border-radius: 1rem 0 0 1rem;
+  border: none;
 }
 
 .login_container {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
   background-color: white;
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 1rem;
 }
 
-.login_title {
-  display: flex;
-  font-family: var(--login-title-font-family);
-  font-size: 3rem;
-  margin: 1rem 0;
-  border-bottom: 2px solid black;
+.login_logo {
+  width: 10rem;
+  margin: 0.5rem;
 }
 
 .email_login {
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  border-bottom: 2px solid gold;
-  margin-top: 2rem;
+  border-top: 2px solid gold;
 }
 
-.user_login_title,
+.user_login_title {
+  display: none;
+  margin: 1rem 0;
+  font-family: var(--login-text-font-family);
+  font-size: 2rem;
+}
+
 .social_login_title {
   display: flex;
   align-items: center;
@@ -92,10 +99,6 @@
   margin-top: 1rem;
   font-family: var(--login-text-font-family);
   font-size: 1.2rem;
-}
-
-.user_login_title {
-  font-size: 1.5rem;
 }
 
 .login_form {
@@ -118,34 +121,40 @@
   width: 100%;
   height: 2.5rem;
   margin: 1rem 0;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   padding-left: 1rem;
   border: none;
-  box-shadow: 5px 2px 2px orange;
   outline: none;
+  background-color: gold;
 }
 
 .input_email::placeholder,
 .input_password::placeholder {
   padding-left: 1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-family: var(--login-text-font-family);
+  color: white;
 }
 
-.BtnLogin {
-  display: flex;
+.login_button {
   cursor: pointer;
-  height: 0.8rem;
-  margin: 1rem 0;
-  width: auto;
-  border: none;
-  background: none;
+  display: flex;
+  width: 7rem;
+  height: 2rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-family: var(--login-button-font-family);
+  font-weight: 700;
+  background-color: var(--login-background-color);
+  color: white;
   align-items: center;
   justify-content: center;
-  object-fit: cover;
+  border-radius: 0.4rem;
+  border: none;
 }
 
-.BtnLogin:hover {
-  transform: scale(1.15);
+.login_button:hover {
+  box-shadow: 2px 2px 4px orange;
 }
 
 .social_login {
@@ -162,7 +171,7 @@
   position: relative;
   list-style: none;
 }
-
+/* 
 .BtnGoogle,
 .BtnFacebook {
   position: relative;
@@ -174,12 +183,24 @@
   justify-content: center;
   font-family: fantasy;
   font-size: 1rem;
-  box-shadow: 5px 2px 2px orange;
   border: 2px;
   border-style: ridge;
   border-radius: 0.4rem;
   color: black;
   cursor: pointer;
+} */
+
+.BtnGoogle,
+.BtnFacebook {
+  display: flex;
+  position: relative;
+  margin: 0.5rem 0;
+  width: 12rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0.5rem;
 }
 
 .BtnGoogle:hover,
@@ -191,8 +212,9 @@
   position: absolute;
   display: flex;
   margin-left: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   right: 1.5rem;
+  font-family: var(--login-text-font-family);
 }
 
 .BtnGoogle > p {
@@ -200,18 +222,21 @@
   right: 1.5rem;
   display: flex;
   margin-left: 2.2rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-family: var(--login-text-font-family);
 }
 
 .logo_facebook {
   position: absolute;
   left: 1.5rem;
   color: blue;
+  font-size: 1.2rem;
 }
 
 .logo_google {
   position: absolute;
   left: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .signup {
@@ -228,7 +253,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "IBM_R";
+  font-family: var(--login-signup-text-font-family);
 }
 
 .BtnSignup {
@@ -239,13 +264,12 @@
   justify-content: center;
   margin-top: 1rem;
   border: none;
-  font-family: "IBM_R";
+  font-family: var(--login-signup-text-font-family);
   cursor: pointer;
   transition: all ease 0.1s;
-  background-color: white;
+  background-color: var(--login-background-color);
 }
 
 .BtnSignup:hover {
   transform: scale(1.1);
-  background-color: rgb(247, 218, 56);
 }

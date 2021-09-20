@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styles from "./login.module.css";
-import imgLogin from "../../image/login_title.png";
-import buttonImg from "../../image/login_button.png";
+import logoImg from "../../image/login_logo.png";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 
@@ -54,12 +53,13 @@ const Login = ({ authService }) => {
   };
   return (
     <section className={styles.login}>
-      <h2 className={styles.login_title}>LOGIN</h2>
       <div className={styles.login_wrap}>
-        <section className={styles.login_image}></section>
         <section className={styles.login_container}>
+          <Link to="/">
+            <img src={logoImg} alt="go to home" className={styles.login_logo} />
+          </Link>
           <div className={styles.email_login}>
-            <h3 className={styles.user_login_title}>회원 로그인</h3>
+            <h3 className={styles.user_login_title}>LOGIN</h3>
             <form
               className={styles.login_form}
               onSubmit={MemberLogin}
@@ -85,7 +85,7 @@ const Login = ({ authService }) => {
                   className={styles.input_password}
                 />
               </div>
-              <button className={styles.BtnLogin} type="submit">
+              <button className={styles.login_button} type="submit">
                 LOGIN
               </button>
             </form>
