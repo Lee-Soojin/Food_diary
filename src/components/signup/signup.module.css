@@ -25,6 +25,15 @@
   background-image: url(../../image/plate_bg_beige.jpg);
 }
 
+.home_logo {
+  display: flex;
+  width: 9rem;
+  position: absolute;
+  top: 2rem;
+  left: 47%;
+  margin: 0.5rem auto;
+}
+
 .signup_container {
   position: absolute;
   display: flex;

@@ -4,6 +4,7 @@
 
 :root {
   --button-background-color: #4dba5b;
+  --diary-background-color: rgb(234, 237, 248);
 }
 
 @font-face {
@@ -21,6 +22,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  background-color: var(--diary-background-color);
 }
 
 .Editor {
@@ -30,6 +32,7 @@
   top: 7rem;
   height: 100%;
   align-items: center;
+  background-color: var(--diary-background-color);
 }
 
 .greeting_container {

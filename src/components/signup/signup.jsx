@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import styles from "./signup.module.css";
+import HomeLogo from "../../image/home_logo.png";
 
 const SignUp = ({ authService }) => {
   const [email, setEmail] = useState("");
@@ -39,6 +40,9 @@ const SignUp = ({ authService }) => {
 
   return (
     <div className={styles.SignUp}>
+      <Link to="/">
+        <img src={HomeLogo} alt="Go to home" className={styles.home_logo} />
+      </Link>
       <div className={styles.signup_container}>
         <section className={styles.Image}></section>
         <section className={styles.signup}>
