@@ -146,6 +146,18 @@ figure > img {
   color: red;
 }
 
+@media screen and (max-width: 1100px) {
+  .diary_container {
+    width: 60rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .diary_container {
+    width: 55rem;
+  }
+}
+
 @media screen and (max-width: 860px) {
   .diary_container {
     width: 70%;
@@ -237,5 +249,14 @@ figure > img {
   .diary_container {
     width: 16rem;
     height: 24rem;
+  }
+
+  .title {
+    margin: 0;
+    width: 9.5rem;
+  }
+
+  .description {
+    padding-bottom: 0.5rem;
   }
 }
