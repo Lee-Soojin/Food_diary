@@ -13,7 +13,7 @@
 
 ## 기술 스택
 
-<img alt="React" src ="https://img.shields.io/badge/React-61DAFB.svg?&style=for-the-badge&logo=React&logoColor=blue"/> <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=white"/> <img alt="PostCSS" src ="https://img.shields.io/badge/PostCSS-DD3A0A.svg?&style=for-the-badge&logo=PostCSS&logoColor=white"/> <img alt="CSS3" src ="https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/> <img alt="Firebase" src ="https://img.shields.io/badge/Firebase-FFCA28.svg?&style=for-the-badge&logo=Firebase&logoColor=white"/> <img alt="HTML5" src ="https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/> <img alt="Yarn" src ="https://img.shields.io/badge/Yarn-2C8EBB.svg?&style=for-the-badge&logo=Yarn&logoColor=white"/> <img alt="React Router" src ="https://img.shields.io/badge/ReactRouter-CA4245.svg?&style=for-the-badge&logo=React-Router&logoColor=white"/> <img alt="CKEditor" src ="https://img.shields.io/badge/CKEditor-0287D0.svg?&style=for-the-badge&logo=CKEditor4&logoColor=white"/> <img alt="Naver" src ="https://img.shields.io/badge/Naver-03C75A.svg?&style=for-the-badge&logo=Naver&logoColor=white"/>
+<img alt="React" src ="https://img.shields.io/badge/React-61DAFB.svg?&style=for-the-badge&logo=React&logoColor=blue"/> <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=white"/> <img alt="PostCSS" src ="https://img.shields.io/badge/PostCSS-DD3A0A.svg?&style=for-the-badge&logo=PostCSS&logoColor=white"/> <img alt="CSS3" src ="https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/> <img alt="Firebase" src ="https://img.shields.io/badge/Firebase-FFCA28.svg?&style=for-the-badge&logo=Firebase&logoColor=white"/> <img alt="HTML5" src ="https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/> <img alt="Yarn" src ="https://img.shields.io/badge/Yarn-2C8EBB.svg?&style=for-the-badge&logo=Yarn&logoColor=white"/> <img alt="React Router" src ="https://img.shields.io/badge/ReactRouter-CA4245.svg?&style=for-the-badge&logo=React-Router&logoColor=white"/> <img alt="CKEditor" src ="https://img.shields.io/badge/CKEditor-0287D0.svg?&style=for-the-badge&logo=CKEditor4&logoColor=white"/> <img alt="Naver" src ="https://img.shields.io/badge/Naver-03C75A.svg?&style=for-the-badge&logo=Naver&logoColor=white"/> <img alt="Photoshop" src ="https://img.shields.io/badge/Photoshop-31A8FF.svg?&style=for-the-badge&logo=adobe-Photoshop&logoColor=black"/>
 
 ---
 
@@ -76,3 +76,16 @@ _Cloudinary 저장_
 
 _일기가 없는 경우 Board page_
 ![board page](src/image/readme_board_nopost.PNG)
+
+## CSS
+
+### 반응형
+
+창의 크기에 따라 요소들의 정렬 및 크기 등이 조정된다.
+
+![Responsive](src/image/readme_responsive.jpg)
+
+### 사진들
+
+로고, 배경, 홈 이미지 등 여러 이미지들은 Photoshop을 이용해 제작했다.
+![photos](src/image/readme_photoshop.jpg)
