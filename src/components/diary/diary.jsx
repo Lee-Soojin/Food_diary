@@ -92,7 +92,9 @@ const Diary = memo(({ naver, authService, Repository }) => {
       if (user) {
         setUserId(user.uid);
       } else {
-        history.push("/");
+        history.push({
+          pathname: "/",
+        });
       }
     });
   });
