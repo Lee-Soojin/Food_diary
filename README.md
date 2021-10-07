@@ -1,6 +1,6 @@
 # 푸드 다이어리 Food Diary
 
-배포 주소: <https://614c1d321fffb755093e35c2--food-diary.netlify.app>
+배포 주소:<https://615e68a6eaf6fc6e5799f247--food-diary.netlify.app>
 
 ## 제작 동기
 
